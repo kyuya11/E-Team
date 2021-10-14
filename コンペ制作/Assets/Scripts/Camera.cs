@@ -13,9 +13,6 @@ public class Camera : MonoBehaviour
     private float cameraZ = 0.0f;
     private float offsetX = 0.0f;
     private float offsetZ = 0.0f;
-    //private float N;
-    //private float MoveX;
-    //bool Flg = false;
 
     //Use this for initialization
 
@@ -24,9 +21,6 @@ public class Camera : MonoBehaviour
     {
         //Ballの情報取得
         this.Ball = GameObject.Find("Ball");
-
-        ////MainCamera(自分自身)とボールとの相対距離を求める
-        //offset = transform.position - Ball.transform.position;
 
         offsetX = transform.position.x - Ball.transform.position.x;
         offsetZ = transform.position.z - Ball.transform.position.z;
@@ -41,36 +35,12 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(ballX != Ball.transform.position.x || ballZ != Ball.transform.position.z)
-        //{
-        //    ballX = Ball.transform.position.x;
-        //    ballZ = Ball.transform.position.z;
-        //}
-        if(ballX != Ball.transform.position.x)
+        if(ballX != Ball.transform.position.x || ballZ != Ball.transform.position.z)
         {
-            //N = Ball.transform.position.x - ballX;
-            //if(N >= 1.5f || N <= -1.5f)
-            //{
-            //    ballX = Ball.transform.position.x;
-            //    //MoveX = ballX + offsetX;
-            //    if (MoveX != ballX + offsetX)
-            //    {
-            //        for (MoveX = 0.0f;MoveX < ballX + offsetX; MoveX += 0.01f)
-            //        {
-            //            transform.position = new Vector3(MoveX, cameraY, ballZ + offsetZ);
-            //        }
-            //    }
-            //    //transform.position = new Vector3(ballX + offsetX, cameraY, ballZ + offsetZ);
-            //}
-            if(ballX != Ball.transform.position.x || ballZ != Ball.transform.position.z)
-            {
-                ballX = Ball.transform.position.x;
-                ballZ = Ball.transform.position.z;
-
-            }
-            transform.position = new Vector3(ballX + offsetX, cameraY, ballZ + offsetZ);
-            
+            ballX = Ball.transform.position.x;
+            ballZ = Ball.transform.position.z;
         }
+        transform.position = new Vector3(ballX + offsetX, cameraY, ballZ + offsetZ);
         
         ////新しいトランスフォームの値を代入する
         //transform.position = Ball.transform.position + offset;
