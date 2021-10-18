@@ -14,7 +14,7 @@ public class CameraMove15 : MonoBehaviour
     private float offsetZ = 0.0f;
     private float N;
     private float MoveX;
-    bool Flg = false;
+    //bool Flg = false;
 
     //Use this for initialization
 
@@ -57,3 +57,4 @@ public class CameraMove15 : MonoBehaviour
         }
     }
 }
+
