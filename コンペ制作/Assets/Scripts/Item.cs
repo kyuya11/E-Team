@@ -8,7 +8,7 @@ public class Item : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Item")    //当たった相手のTagがプレイヤーだったら
+        if (other.gameObject.tag == "Ball")    //当たった相手のTagがプレイヤーだったら
         {
             //itemObject.gameObject.SetActive(false);     //シーンに置かれたアイテムを消します
             gameObject.SetActive(false);     //シーンに置かれたアイテムを消します
