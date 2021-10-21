@@ -14,7 +14,7 @@ using UnityEngine;
     }
     void Update()
         {
-            if (Input.GetKeyDown(KeyCode.P)|| Input.GetButton("joystick button 9"))
+            if (Input.GetKeyDown(KeyCode.P)|| Input.GetButton("Start"))
             {
                 if (Time.timeScale == 1)
                 {

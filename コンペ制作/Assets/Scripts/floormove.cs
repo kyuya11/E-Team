@@ -18,8 +18,9 @@ public class floormove : MonoBehaviour
     {
 
 
-        float x = Input.GetAxisRaw("Horizontal");
-        float z = Input.GetAxisRaw("Vertical");
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
         //transform.rotation = Quaternion.Euler(z * Rotation, 0, -x * Rotation);
 
         var body = GameObject.Find("Ball").GetComponent<Rigidbody>();
