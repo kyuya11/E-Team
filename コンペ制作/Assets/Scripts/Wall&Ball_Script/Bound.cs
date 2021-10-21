@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿/*
+ * PhysicMaterialで管理しているので今は使わないかも
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

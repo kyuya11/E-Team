@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * コメントアウトしている部分はBoundスクリプトと一緒に使う
+ */
 public class Ball : MonoBehaviour
 {
     //private Bound bound;
