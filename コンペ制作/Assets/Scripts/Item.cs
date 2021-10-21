@@ -12,7 +12,6 @@ public class Item : MonoBehaviour
         {
             //itemObject.gameObject.SetActive(false);     //シーンに置かれたアイテムを消します
             gameObject.SetActive(false);     //シーンに置かれたアイテムを消します
-
         }
     }
 }
