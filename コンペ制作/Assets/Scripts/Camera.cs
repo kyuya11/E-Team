@@ -118,10 +118,9 @@ public class Camera : MonoBehaviour
             {
                 count = 0;
             }
-            T = 0;
         
 
-        Goalstate[count] = new Vector3(ballX + offsetX, cameraY, ballZ + offsetZ);
+        
         BallState[count] = Ball.transform.position;
 
         //Debug.Log(Goalstate[0]);
@@ -141,7 +140,7 @@ public class Camera : MonoBehaviour
 
         if (ballX != Ball.transform.position.x || ballZ != Ball.transform.position.z)
         {
-            
+            Goalstate[count] = new Vector3(ballX + offsetX, cameraY, ballZ + offsetZ);
 
             ballX = Ball.transform.position.x;
             ballZ = Ball.transform.position.z;
@@ -166,7 +165,7 @@ public class Camera : MonoBehaviour
             //**************************if文の条件がlength0.0f.ver*************************
 
             ////**************************if文の条件がlength0.01f.ver * ************************
-            if (length < 0.0f) //カメラの移動前と移動後の距離lengthが0.01f未満になってきた場合
+            if (length < 0.01f) //カメラの移動前と移動後の距離lengthが0.01f未満になってきた場合
             {
                 Debug.Log("length値が0.01以下になりました");
                 if (flg == false)
@@ -176,27 +175,28 @@ public class Camera : MonoBehaviour
                     flg = true; //一度初期化しました
                     BallStartPos = Ball.transform.position; //新しいStartposに変更
                     Debug.Log("BallStartPosを変更しました");
-                    Debug.Log(Ball.transform.position);
+                    //Debug.Log(Ball.transform.position);
                 }
-                //else
-                //{
-                //    if (N >= 1.5)
-                //    {
-                //        Debug.Log(Vector3.Distance(BallStartPos, Ball.transform.position));
-                //        if (Vector3.Distance(BallStartPos, Ball.transform.position) < 0.5f) //前の値と今の値の変化量が0.01fより小さい場合
-                //        {
-                //            ;
-                //        }
-                //        else
-                //        {
+                else
+                {
+                    if (N >= 5)
+                    {
+                        //Debug.Log(Vector3.Distance(BallStartPos, Ball.transform.position));
+                        if (Vector3.Distance(BallStartPos, Ball.transform.position) < 0.01f) //前の値と今の値の変化量が0.01fより小さい場合
+                        //if (length < 0.01f) //前の値と今の値の変化量が0.01fより小さい場合
+                        {
+                            ;
+                        }
+                        else
+                        {
 
-                //            Debug.Log("フラグを戻します");
-                //            flg = false; //初期化しても良い状態に戻す
-                //        }
-                //        //Debug.Log("N");
-                //        //flg = false; //初期化しても良い状態に戻す
-                //    }
-                //}
+                            Debug.Log("フラグを戻します");
+                            flg = false; //初期化しても良い状態に戻す
+                        }
+                        //Debug.Log("N");
+                        //flg = false; //初期化しても良い状態に戻す
+                    }
+                }
             }
             //    //**************************if文の条件がlength0.01f.ver * ************************
 
