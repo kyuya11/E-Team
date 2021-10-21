@@ -56,7 +56,7 @@ public class Camera : MonoBehaviour
     void Update()
     {
 
-        //length = Vector3.Distance(Goalstate[0], Goalstate[1]);
+        length = Vector3.Distance(Goalstate[0], Goalstate[1]);
         //length = Vector3.Distance(BallState, Ball.transform.position);
         //length = Vector3.Distance(BallState[0], BallState[1]);
 
@@ -67,18 +67,18 @@ public class Camera : MonoBehaviour
         //    Debug.Log("ボールが停止しています");
         //}
 
-        if (Ball.GetComponent<Rigidbody>().IsSleeping())
-        {
-            Debug.Log("length値が0.0fになりました");
+        //if (Ball.GetComponent<Rigidbody>().IsSleeping())
+        //{
+        //    Debug.Log("length値が0.0fになりました");
 
-            //Debug.Log(Goalstate[0]);
-            //Debug.Log(Goalstate[1]);
+        //    //Debug.Log(Goalstate[0]);
+        //    //Debug.Log(Goalstate[1]);
 
-            N = 0;
-            Debug.Log("Nが初期化されました");
-            BallStartPos = Ball.transform.position; //新しいStartposに変更
-            Debug.Log("BallStartPosを変更しました");
-        }
+        //    N = 0;
+        //    Debug.Log("Nが初期化されました");
+        //    BallStartPos = Ball.transform.position; //新しいStartposに変更
+        //    Debug.Log("BallStartPosを変更しました");
+        //}
 
         //**************************if文の条件がlength0.0f.ver*************************
         //if (count >= 1)　//ボールの移動前と移動後の距離が重なった場合
@@ -150,54 +150,54 @@ public class Camera : MonoBehaviour
             //Debug.Log(length);
 
             //**************************if文の条件がlength0.0f.ver*************************
-            if (length < 0.0f) //ボールの移動前と移動後の距離が重なった場合
-            {
-                Debug.Log("length値が0.0fになりました");
+            //if (length < 0.0f) //ボールの移動前と移動後の距離が重なった場合
+            //{
+            //    Debug.Log("length値が0.0fになりました");
 
-                //Debug.Log(Goalstate[0]);
-                //Debug.Log(Goalstate[1]);
+            //    //Debug.Log(Goalstate[0]);
+            //    //Debug.Log(Goalstate[1]);
 
-                N = 0;
-                Debug.Log("Nが初期化されました");
-                BallStartPos = Ball.transform.position; //新しいStartposに変更
-                Debug.Log("BallStartPosを変更しました");
+            //    N = 0;
+            //    Debug.Log("Nが初期化されました");
+            //    BallStartPos = Ball.transform.position; //新しいStartposに変更
+            //    Debug.Log("BallStartPosを変更しました");
 
-            }
+            //}
             //**************************if文の条件がlength0.0f.ver*************************
 
             ////**************************if文の条件がlength0.01f.ver * ************************
-            //if (length < 0.01f) //カメラの移動前と移動後の距離lengthが0.01f未満になってきた場合
-            //{
-            //    Debug.Log("length値が0.01以下になりました");
-            //    if (flg == false)
-            //    {
-            //        N = 0;
-            //        Debug.Log("Nが初期化されました");
-            //        flg = true; //一度初期化しました
-            //        BallStartPos = Ball.transform.position; //新しいStartposに変更
-            //        Debug.Log("BallStartPosを変更しました");
-            //        Debug.Log(Ball.transform.position);
-            //    }
-            //    else
-            //    {
-            //        if (N >= 1.5)
-            //        {
-            //            Debug.Log(Vector3.Distance(BallStartPos, Ball.transform.position));
-            //            if (Vector3.Distance(BallStartPos, Ball.transform.position) < 0.5f) //前の値と今の値の変化量が0.01fより小さい場合
-            //            {
-            //                ;
-            //            }
-            //            else
-            //            {
+            if (length < 0.0f) //カメラの移動前と移動後の距離lengthが0.01f未満になってきた場合
+            {
+                Debug.Log("length値が0.01以下になりました");
+                if (flg == false)
+                {
+                    N = 0;
+                    Debug.Log("Nが初期化されました");
+                    flg = true; //一度初期化しました
+                    BallStartPos = Ball.transform.position; //新しいStartposに変更
+                    Debug.Log("BallStartPosを変更しました");
+                    Debug.Log(Ball.transform.position);
+                }
+                //else
+                //{
+                //    if (N >= 1.5)
+                //    {
+                //        Debug.Log(Vector3.Distance(BallStartPos, Ball.transform.position));
+                //        if (Vector3.Distance(BallStartPos, Ball.transform.position) < 0.5f) //前の値と今の値の変化量が0.01fより小さい場合
+                //        {
+                //            ;
+                //        }
+                //        else
+                //        {
 
-            //                Debug.Log("フラグを戻します");
-            //                flg = false; //初期化しても良い状態に戻す
-            //            }
-            //            //Debug.Log("N");
-            //            //flg = false; //初期化しても良い状態に戻す
-            //        }
-            //    }
-            //}
+                //            Debug.Log("フラグを戻します");
+                //            flg = false; //初期化しても良い状態に戻す
+                //        }
+                //        //Debug.Log("N");
+                //        //flg = false; //初期化しても良い状態に戻す
+                //    }
+                //}
+            }
             //    //**************************if文の条件がlength0.01f.ver * ************************
 
 
