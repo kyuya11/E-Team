@@ -411,7 +411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e79f3a1d5c5d84d83d222fa9a16d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rotation: 30
 --- !u!54 &420378202
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1160,10 +1159,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 683682032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f955a6254e217a2418a29a639add980f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1091a23f1f2851146969f37de0e9f3da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pausePanel: {fileID: 1610590566}
+  pausePanel: {fileID: 683682032}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2268,7 +2267,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1553654217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94e79f3a1d5c5d84d83d222fa9a16d8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1896f70ca7699ee4b86ef1acdb7d07e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Rotation: 30

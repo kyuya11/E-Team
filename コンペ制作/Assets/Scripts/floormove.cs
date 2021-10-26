@@ -5,9 +5,11 @@ using UnityEngine;
 public class floormove : MonoBehaviour
 {
     Transform target;
-    float speed = 1.2f;
+    float speed = 1.3f;
     float step;
     public float Rotation = 30f;
+    float x = 0f;
+    float z = 0f;
 
     void Start()
     {
@@ -17,16 +19,46 @@ public class floormove : MonoBehaviour
     void FixedUpdate()
     {
 
-
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
+        x = Input.GetAxisRaw("Horizontal");
+        z = Input.GetAxisRaw("Vertical");
         //transform.rotation = Quaternion.Euler(z * Rotation, 0, -x * Rotation);
 
         var body = GameObject.Find("Ball").GetComponent<Rigidbody>();
         Rigidbody rigidbody = GameObject.Find("floor").GetComponent<Rigidbody>();
 
         step = speed * Time.deltaTime;
+        if (x > 0f)
+        {
+            x = 1f;
+        }
+        else if (x < 0f)
+        {
+            x = -1f;
+
+        }
+        else 
+        {
+            x = 0f;
+        }
+        if (z > 0f)
+        {
+            z = 1f;
+
+        }
+        else if (z < 0f)
+        {
+            z = -1f;
+
+        }
+        else
+        {
+            z = 0f;
+        }
+        
+        
+
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(z * Rotation, 0, -x * Rotation), step);
+        
     }
+    
 }
