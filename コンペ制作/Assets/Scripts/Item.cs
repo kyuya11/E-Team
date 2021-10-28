@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Item : MonoBehaviour
 {
     public Text Counttext;
-    private static int getItemCount = 0;
+    private static int getItemCount;
+    void Start() 
+    {
+        getItemCount = 0;
+
+    }
+
+    
     //public GameObject itemObject;   //シーンに置いてある拾うアイテムの変数
 
     private void OnCollisionEnter(Collision other)
