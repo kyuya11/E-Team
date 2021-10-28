@@ -8,17 +8,8 @@ public class NewBehaviourScript : MonoBehaviour
 {
     static int MenuNumber = 0;
     RectTransform rect;
-    bool pushFlag = false;
 
-    void Quit()
-    {
-     #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-     #elif UNITY_STANDALONE
-      UnityEngine.Application.Quit();
-     #endif
-    }
-
+    bool pushFlag = false;    
     void Start()
     {
         rect = GetComponent<RectTransform>();
@@ -65,6 +56,7 @@ public class NewBehaviourScript : MonoBehaviour
                 rect.localPosition = new Vector3(-240, -40, 0);
                 if (Input.GetButton("A"))
                 {
+                    
                     SceneManager.LoadScene("New Scene");
                 }
                 Debug.Log("1");
@@ -73,7 +65,7 @@ public class NewBehaviourScript : MonoBehaviour
                 rect.localPosition = new Vector3(-240, -100, 0);
                 if (Input.GetButton("A"))
                 {
-                    Quit();
+                    UnityEditor.EditorApplication.isPlaying = false;
                 }
                 Debug.Log("2");
                 break;
