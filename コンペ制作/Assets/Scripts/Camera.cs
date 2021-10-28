@@ -14,6 +14,8 @@ public class Camera : MonoBehaviour
     private Vector3 Goal;
     private float N = 0.0f; //移動量を格納する変数
 
+    private Vector3 _prevPosition;
+    private float velocity;
     //Use this for initialization
 
     // Start is called before the first frame update
@@ -22,6 +24,7 @@ public class Camera : MonoBehaviour
         //transform.position = transform.position;
         //Ballの情報取得
         this.Ball = GameObject.Find("Ball");
+        _prevPosition = Ball.transform.position;
 
         offsetX = transform.position.x - Ball.transform.position.x;
         offsetZ = transform.position.z - Ball.transform.position.z;
@@ -39,6 +42,12 @@ public class Camera : MonoBehaviour
 
     void Update()
     {
+        if (Mathf.Approximately(Time.deltaTime, 0))
+            return;
+        var position = Ball.transform.position;
+        var velocity = (Vector3.Distance(position, _prevPosition) / Time.deltaTime);
+        var velCam = velocity * 0.75 / 100;
+        Debug.Log(velocity);
 
         if (ballX != Ball.transform.position.x || ballZ != Ball.transform.position.z)
         {
@@ -54,7 +63,7 @@ public class Camera : MonoBehaviour
 
         if (N >= 1.5f)
         {
-            transform.position = Vector3.Lerp(transform.position, Goal, 6.0f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, Goal, (float)velCam * Time.deltaTime);
         }
 
        

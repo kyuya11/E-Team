@@ -16,7 +16,7 @@ public class NewBehaviourScript : MonoBehaviour
          
     void Update()
     {
-        if (Input.GetAxis("Vertical") == 1)
+        if (Input.GetAxis("Vertical") == -1)
         {
             if (pushFlag == false)
             {
@@ -25,7 +25,7 @@ public class NewBehaviourScript : MonoBehaviour
 
             }
         }
-        else if (Input.GetAxis("Vertical") == -1)
+        else if (Input.GetAxis("Vertical") == 1)
         {
             if (pushFlag == false)
             {
@@ -44,10 +44,15 @@ public class NewBehaviourScript : MonoBehaviour
         {
             case 0:
                 rect.localPosition = new Vector3(-240, 22, 0);
+                
                 Debug.Log("0");
                 break;
             case 1:
                 rect.localPosition = new Vector3(-240, -40, 0);
+                if (Input.GetButton("A")||Input.GetKeyDown("A"))
+                {
+                    SceneManager.LoadScene("New Scene");
+                }
                 Debug.Log("1");
                 break;
             case 2:
