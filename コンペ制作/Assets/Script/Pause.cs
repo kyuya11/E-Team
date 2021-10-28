@@ -4,45 +4,36 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
-    float lastTimeArrowKeyDown_ = 0f;
     [SerializeField]
     GameObject pausePanel;
-    private bool pausegame;
-    private bool Panel;
+    private bool pushFlag =  false;
 
     private void Start()
     {
         pausePanel.SetActive(false);
-        pausegame = false;
-        Panel = false;
     }
     void Update()
     {
-        if (Time.time - lastTimeArrowKeyDown_ > 0.25f)
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetButton("Start"))
         {
-            pausegame = false;
-        }
-
-        if (pausegame == false)
-        {
-
+            if (pushFlag == false)
             {
-                if (/*Input.GetKeyDown(KeyCode.P) || */Input.GetButton("Start"))
+                pushFlag = true;
+                if (Time.timeScale == 1)
                 {
-                    lastTimeArrowKeyDown_ = Time.time;
-
-                    pausegame = !pausegame;
-                    if (pausegame == true)
-                    {
-                        Time.timeScale = 0;
-                        pausePanel.SetActive(true);
-                    }
-                    else if(Panel == true)
-                    {
-                        Time.timeScale = 1;
-                        pausePanel.SetActive(false);
-                    }
+                    Time.timeScale = 0;
+                    pausePanel.SetActive(true);
                 }
+                else
+                {
+                    pushFlag = true;
+                    Time.timeScale = 1;
+                    pausePanel.SetActive(false);
+                }
+            }
+            else
+            {
+                pushFlag = false;
             }
         }
     }
