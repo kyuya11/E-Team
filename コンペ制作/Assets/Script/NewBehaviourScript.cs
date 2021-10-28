@@ -10,6 +10,15 @@ public class NewBehaviourScript : MonoBehaviour
     RectTransform rect;
     bool pushFlag = false;
 
+    void Quit()
+    {
+     #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+     #elif UNITY_STANDALONE
+      UnityEngine.Application.Quit();
+     #endif
+    }
+
     void Start()
     {
         rect = GetComponent<RectTransform>();
@@ -45,7 +54,11 @@ public class NewBehaviourScript : MonoBehaviour
         {
             case 0:
                 rect.localPosition = new Vector3(-240, 22, 0);
-                
+                if (Input.GetButton("A"))
+                {
+                    Time.timeScale = 1;
+                    SceneManager.LoadScene("SampleScene");
+                }
                 Debug.Log("0");
                 break;
             case 1:
@@ -58,6 +71,10 @@ public class NewBehaviourScript : MonoBehaviour
                 break;
             case 2:
                 rect.localPosition = new Vector3(-240, -100, 0);
+                if (Input.GetButton("A"))
+                {
+                    Quit();
+                }
                 Debug.Log("2");
                 break;
 
