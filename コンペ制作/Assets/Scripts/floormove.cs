@@ -55,10 +55,38 @@ public class floormove : MonoBehaviour
             z = 0f;
         }
         
-        
+        if (x > 0 || x < 0 || z > 0 || z < 0)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(z * Rotation, 0, -x * Rotation), step);
+        }else
+        {
+            if (gameObject.transform.localEulerAngles.x > 0)
+            {
+                for (int i = 120; i < 0; i -= 2)
+                {
+                    z = i / 120.0f;
+                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(z * Rotation, 0, -x * Rotation), step);
 
+                }
+            }
+            else if (gameObject.transform.localEulerAngles.x < 0)
+            {
+                for (int i = -120; i > 0; i += 2)
+                {
+                    z = i / 120.0f;
+                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(z * Rotation, 0, -x * Rotation), step);
+
+                }
+            }
+            StartCoroutine(DelayCoroutine());
+        }
+    }
+    private IEnumerator DelayCoroutine()
+    {
+        yield return new WaitForSeconds(1);
+        z = 0f;
+        x = 0f;
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(z * Rotation, 0, -x * Rotation), step);
-        
     }
     
 }
