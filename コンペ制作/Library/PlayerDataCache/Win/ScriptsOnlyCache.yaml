@@ -28,6 +28,29 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/New Scene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
     Assets/Scenes/SampleScene.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -60,31 +83,31 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 13866}
+      Script: {instanceID: 11154}
     - Class: 114
-      Script: {instanceID: 13942}
+      Script: {instanceID: 11234}
     - Class: 114
-      Script: {instanceID: 13996}
+      Script: {instanceID: 11288}
     - Class: 114
-      Script: {instanceID: 14050}
+      Script: {instanceID: 11342}
     - Class: 114
-      Script: {instanceID: 14100}
+      Script: {instanceID: 11392}
     - Class: 114
-      Script: {instanceID: 14530}
+      Script: {instanceID: 11826}
     - Class: 114
-      Script: {instanceID: 15260}
+      Script: {instanceID: 12570}
     - Class: 114
-      Script: {instanceID: 15448}
+      Script: {instanceID: 12764}
     - Class: 114
-      Script: {instanceID: 15496}
+      Script: {instanceID: 12814}
     - Class: 114
-      Script: {instanceID: 15544}
+      Script: {instanceID: 12862}
     - Class: 114
-      Script: {instanceID: 15924}
+      Script: {instanceID: 13244}
     - Class: 114
-      Script: {instanceID: 15938}
+      Script: {instanceID: 13258}
     - Class: 114
-      Script: {instanceID: 15940}
+      Script: {instanceID: 13260}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -94,6 +117,8 @@ ScriptsOnlyBuild:
     - Class: 135
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -901,4 +926,5 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/sourcetree/Build3/Competition.exe
+  - Assets/Scenes/New Scene.unity
+  playerPath: D:/Conpe-Build/Competition.exe

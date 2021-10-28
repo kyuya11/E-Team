@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
     [SerializeField]
     GameObject pausePanel;
-    private bool pushFlag =  false;
+    bool pushFlag = false;
 
     private void Start()
     {
         pausePanel.SetActive(false);
     }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P) || Input.GetButton("Start"))
@@ -31,10 +33,10 @@ public class Pause : MonoBehaviour
                     pausePanel.SetActive(false);
                 }
             }
-            else
-            {
-                pushFlag = false;
-            }
+        }
+        else
+        {
+            pushFlag = false;
         }
     }
 }
