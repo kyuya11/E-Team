@@ -11,7 +11,6 @@ public class Item : MonoBehaviour
     void Start() 
     {
         getItemCount = 0;
-
     }
 
     void OnTriggerEnter(Collider other)
