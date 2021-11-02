@@ -10,18 +10,19 @@ public class floormove : MonoBehaviour
     public float Rotation = 30f;
     float x = 0f;
     float z = 0f;
-    int CountdownStart;
+    bool CountdownStart;
 
     void Start()
     {
         target = GameObject.Find("floor").transform;
 
     }
+
     // Update is called once per frame
     void FixedUpdate()
     {
         CountdownStart = StartCount.CountDownStart();
-        if (CountdownStart <= 0)
+        if (CountdownStart == false)
         {
 
 
