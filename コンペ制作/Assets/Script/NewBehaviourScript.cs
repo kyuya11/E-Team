@@ -58,6 +58,7 @@ public class NewBehaviourScript : MonoBehaviour
                 {
                     
                     SceneManager.LoadScene("Title");
+                    Time.timeScale = 1;
                 }
                 Debug.Log("1");
                 break;
