@@ -57,7 +57,8 @@ public class NewBehaviourScript : MonoBehaviour
                 if (Input.GetButton("A"))
                 {
                     
-                    SceneManager.LoadScene("New Scene");
+                    SceneManager.LoadScene("Title");
+                    Time.timeScale = 1;
                 }
                 Debug.Log("1");
                 break;
@@ -65,7 +66,7 @@ public class NewBehaviourScript : MonoBehaviour
                 rect.localPosition = new Vector3(-240, -100, 0);
                 if (Input.GetButton("A"))
                 {
-                    UnityEditor.EditorApplication.isPlaying = false;
+                    //UnityEditor.EditorApplication.isPlaying = false;
                 }
                 Debug.Log("2");
                 break;
