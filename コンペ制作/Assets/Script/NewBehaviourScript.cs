@@ -57,7 +57,7 @@ public class NewBehaviourScript : MonoBehaviour
                 if (Input.GetButton("A"))
                 {
                     
-                    SceneManager.LoadScene("New Scene");
+                    SceneManager.LoadScene("Title");
                 }
                 Debug.Log("1");
                 break;
