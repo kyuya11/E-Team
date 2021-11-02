@@ -38,6 +38,6 @@ public class Pause : MonoBehaviour
         {
             pushFlag = false;
         }
-        Debug.Log(pushFlag);
+        //Debug.Log(pushFlag);
     }
 }

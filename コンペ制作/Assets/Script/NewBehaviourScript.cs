@@ -56,9 +56,9 @@ public class NewBehaviourScript : MonoBehaviour
                 rect.localPosition = new Vector3(-240, -40, 0);
                 if (Input.GetButton("A"))
                 {
-                    
-                    SceneManager.LoadScene("Title");
                     Time.timeScale = 1;
+                    SceneManager.LoadScene("Title");
+                    
                 }
                 Debug.Log("1");
                 break;
