@@ -47,7 +47,7 @@ public class Camera : MonoBehaviour
         var position = Ball.transform.position;
         var velocity = (Vector3.Distance(position, _prevPosition) / Time.deltaTime);
         var velCam = velocity * 0.75 / 100;
-        Debug.Log(velocity);
+        //Debug.Log(velocity);
 
         if (ballX != Ball.transform.position.x || ballZ != Ball.transform.position.z)
         {
