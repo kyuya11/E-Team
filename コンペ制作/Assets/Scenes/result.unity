@@ -315,7 +315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 120}
+  m_AnchoredPosition: {x: 0, y: 80}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &493603981
@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 733560989}
   - component: {fileID: 733560988}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Retry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -859,7 +859,7 @@ GameObject:
   - component: {fileID: 1092223439}
   - component: {fileID: 1092223438}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -894,7 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1053,7 +1053,7 @@ RectTransform:
   m_GameObject: {fileID: 1168608620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.096, y: 1.225, z: 1}
   m_Children: []
   m_Father: {fileID: 1092223441}
   m_RootOrder: 0
@@ -1218,7 +1218,7 @@ RectTransform:
   m_GameObject: {fileID: 1667255429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.118, z: 1}
   m_Children: []
   m_Father: {fileID: 733560991}
   m_RootOrder: 0
@@ -1340,6 +1340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2023160137}
   - component: {fileID: 2023160136}
+  - component: {fileID: 2023160138}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1374,3 +1375,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2023160138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023160135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8be694adee0c34bbbfdca3dd88639e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resultpanel: {fileID: 1092223437}
