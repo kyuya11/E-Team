@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameClear : MonoBehaviour
 {
@@ -23,6 +24,12 @@ public class GameClear : MonoBehaviour
         {
             clearText.enabled = true;
             Time.timeScale = 0f;
+            StartCoroutine("Coroutine");
         }
+    }
+    private IEnumerator Coroutine()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("result");
     }
 }
