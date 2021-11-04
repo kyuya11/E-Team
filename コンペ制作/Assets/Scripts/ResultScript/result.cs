@@ -13,7 +13,7 @@ public class result : MonoBehaviour
     {
         score = Item.GetItemCount();
 
-        Counttext.text = string.Format("獲得したコイン:{0}/12", score);
+        Counttext.text = string.Format("獲得したコイン  :  {0}/12", score);
     }
 
     // Update is called once per frame
