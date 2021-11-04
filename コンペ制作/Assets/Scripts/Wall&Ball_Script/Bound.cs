@@ -37,7 +37,7 @@ public class Bound : MonoBehaviour
             rb.velocity = reflectVec;
             //計算した反射ベクトルを保存
             afterReflectVero = rb.velocity;
-            Debug.Log("nomal:" + afterReflectVero);
+            //Debug.Log("nomal:" + afterReflectVero);
         }
     }
 }
