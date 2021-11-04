@@ -5,28 +5,26 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     private GameObject Ball;  //ボール情報格納用
-    //private Vector3 offset; //相対距離取得用
 
     private float ballX = 0.0f;
     private float ballZ = 0.0f;
     private float cameraY = 0.0f;
-    private float cameraZ = 0.0f;
     private float offsetX = 0.0f;
     private float offsetZ = 0.0f;
-    //private float N;
-    //private float MoveX;
-    //bool Flg = false;
+    private Vector3 Goal;
+    private float N = 0.0f; //移動量を格納する変数
 
+    private Vector3 _prevPosition;
+    private float velocity;
     //Use this for initialization
 
     // Start is called before the first frame update
     void Start()
     {
+        //transform.position = transform.position;
         //Ballの情報取得
         this.Ball = GameObject.Find("Ball");
-
-        ////MainCamera(自分自身)とボールとの相対距離を求める
-        //offset = transform.position - Ball.transform.position;
+        _prevPosition = Ball.transform.position;
 
         offsetX = transform.position.x - Ball.transform.position.x;
         offsetZ = transform.position.z - Ball.transform.position.z;
@@ -36,43 +34,41 @@ public class Camera : MonoBehaviour
 
         ballX = Ball.transform.position.x;
         ballZ = Ball.transform.position.z;
+
+        Goal = new Vector3(ballX + offsetX, cameraY, ballZ + offsetZ);
     }
 
     // Update is called once per frame
+
     void Update()
     {
-        //if(ballX != Ball.transform.position.x || ballZ != Ball.transform.position.z)
-        //{
-        //    ballX = Ball.transform.position.x;
-        //    ballZ = Ball.transform.position.z;
-        //}
-        if(ballX != Ball.transform.position.x)
-        {
-            //N = Ball.transform.position.x - ballX;
-            //if(N >= 1.5f || N <= -1.5f)
-            //{
-            //    ballX = Ball.transform.position.x;
-            //    //MoveX = ballX + offsetX;
-            //    if (MoveX != ballX + offsetX)
-            //    {
-            //        for (MoveX = 0.0f;MoveX < ballX + offsetX; MoveX += 0.01f)
-            //        {
-            //            transform.position = new Vector3(MoveX, cameraY, ballZ + offsetZ);
-            //        }
-            //    }
-            //    //transform.position = new Vector3(ballX + offsetX, cameraY, ballZ + offsetZ);
-            //}
-            if(ballX != Ball.transform.position.x || ballZ != Ball.transform.position.z)
-            {
-                ballX = Ball.transform.position.x;
-                ballZ = Ball.transform.position.z;
+        if (Mathf.Approximately(Time.deltaTime, 0))
+            return;
+        var position = Ball.transform.position;
+        var velocity = (Vector3.Distance(position, _prevPosition) / Time.deltaTime);
+        var velCam = velocity * 0.75 / 100;
+        Debug.Log(velocity);
 
-            }
-            transform.position = new Vector3(ballX + offsetX, cameraY, ballZ + offsetZ);
-            
+        if (ballX != Ball.transform.position.x || ballZ != Ball.transform.position.z)
+        {
+
+            ballX = Ball.transform.position.x;
+            ballZ = Ball.transform.position.z;
+
+            Goal = new Vector3(ballX + offsetX, cameraY, ballZ + offsetZ);
+
         }
-        
-        ////新しいトランスフォームの値を代入する
-        //transform.position = Ball.transform.position + offset;
+
+        N = Mathf.Abs(Vector3.Distance(transform.position, Goal)); //カメラのスタート位置とカメラの目標地点の距離
+
+        if (N >= 1.5f)
+        {
+            transform.position = Vector3.Lerp(transform.position, Goal, (float)velCam * Time.deltaTime);
+        }
+
+       
+        //Debug.Log(N);
     }
+
 }
+
