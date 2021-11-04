@@ -9,12 +9,12 @@ public class NewBehaviourScript : MonoBehaviour
     static int MenuNumber = 0;
     RectTransform rect;
 
-    bool pushFlag = false;    
+    bool pushFlag = false;
     void Start()
     {
         rect = GetComponent<RectTransform>();
     }
-         
+
     void Update()
     {
         if (Input.GetAxis("Vertical") == -1)
@@ -56,8 +56,9 @@ public class NewBehaviourScript : MonoBehaviour
                 rect.localPosition = new Vector3(-240, -40, 0);
                 if (Input.GetButton("A"))
                 {
-                    
-                    SceneManager.LoadScene("New Scene");
+                    Time.timeScale = 1;
+                    SceneManager.LoadScene("Title");
+
                 }
                 Debug.Log("1");
                 break;

@@ -11,17 +11,12 @@ public class Item : MonoBehaviour
     void Start() 
     {
         getItemCount = 0;
-
     }
 
-    
-    //public GameObject itemObject;   //シーンに置いてある拾うアイテムの変数
-
-    private void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Ball")    //当たった相手のTagがプレイヤーだったら
+        if (other.gameObject.tag == "Ball")    //当たった相手のTagがBallだったら
         {
-            //itemObject.gameObject.SetActive(false);     //シーンに置かれたアイテムを消します
             gameObject.SetActive(false);     //シーンに置かれたアイテムを消します
             getItemCount += 1;
             Counttext.text = string.Format("{0}/12", getItemCount);
