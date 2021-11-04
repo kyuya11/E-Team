@@ -66,7 +66,8 @@ public class NewBehaviourScript : MonoBehaviour
                 rect.localPosition = new Vector3(-240, -100, 0);
                 if (Input.GetButton("A"))
                 {
-                    //UnityEditor.EditorApplication.isPlaying = false;
+                    Application.Quit();
+
                 }
                 Debug.Log("2");
                 break;
