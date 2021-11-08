@@ -50,7 +50,7 @@ public class NewBehaviourScript : MonoBehaviour
                     Time.timeScale = 1;
                     SceneManager.LoadScene("SampleScene");
                 }
-                Debug.Log("0");
+                //Debug.Log("0");
                 break;
             case 1:
                 rect.localPosition = new Vector3(-240, -40, 0);
@@ -60,15 +60,16 @@ public class NewBehaviourScript : MonoBehaviour
                     SceneManager.LoadScene("Title");
 
                 }
-                Debug.Log("1");
+                //Debug.Log("1");
                 break;
             case 2:
                 rect.localPosition = new Vector3(-240, -100, 0);
                 if (Input.GetButton("A"))
                 {
-                    //UnityEditor.EditorApplication.isPlaying = false;
+                    Application.Quit();
+
                 }
-                Debug.Log("2");
+                //Debug.Log("2");
                 break;
 
         }

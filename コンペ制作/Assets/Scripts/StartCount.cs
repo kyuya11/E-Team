@@ -12,7 +12,7 @@ public class StartCount : MonoBehaviour
     void Start()
     {
         count = true;
-        if (count = true)
+        if (count == true)
         {
             StartCoroutine(CountFrame());
         }
