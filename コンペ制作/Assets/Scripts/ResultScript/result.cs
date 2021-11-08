@@ -19,6 +19,6 @@ public class result : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -66,7 +66,7 @@ public class Camera : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, Goal, (float)velCam * Time.deltaTime);
         }
 
-       
+
         //Debug.Log(N);
     }
 
