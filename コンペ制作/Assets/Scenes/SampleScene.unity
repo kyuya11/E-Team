@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44647598, g: 0.49629962, b: 0.5747577, a: 1}
+  m_IndirectSpecularColor: {r: 0.44647622, g: 0.4963001, b: 0.57475835, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -394,7 +394,6 @@ GameObject:
   - component: {fileID: 420378199}
   - component: {fileID: 420378198}
   - component: {fileID: 420378197}
-  - component: {fileID: 420378201}
   - component: {fileID: 420378202}
   m_Layer: 0
   m_Name: floor
@@ -477,18 +476,6 @@ Transform:
   m_Father: {fileID: 1553654219}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &420378201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 420378196}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94e79f3a1d5c5d84d83d222fa9a16d8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &420378202
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1818,8 +1805,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a8d9f70d7e9e594f807444d11b28a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minute: 0
-  seconds: 0
 --- !u!1 &952621653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,7 +2205,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133125476}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a8d9f70d7e9e594f807444d11b28a0f, type: 3}
   m_Name: 

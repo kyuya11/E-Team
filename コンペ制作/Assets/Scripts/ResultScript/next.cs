@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class next : MonoBehaviour
 {
-    GameObject Result;
-    GameObject Retry;
+    public GameObject Result;
+    public GameObject Retry;
     // Start is called before the first frame update
     void Start()
     {
