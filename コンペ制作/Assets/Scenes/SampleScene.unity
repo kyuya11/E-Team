@@ -394,7 +394,6 @@ GameObject:
   - component: {fileID: 420378199}
   - component: {fileID: 420378198}
   - component: {fileID: 420378197}
-  - component: {fileID: 420378201}
   - component: {fileID: 420378202}
   m_Layer: 0
   m_Name: floor
@@ -477,18 +476,6 @@ Transform:
   m_Father: {fileID: 1553654219}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &420378201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 420378196}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94e79f3a1d5c5d84d83d222fa9a16d8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &420378202
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2020,6 +2007,8 @@ GameObject:
   - component: {fileID: 1133125479}
   - component: {fileID: 1133125478}
   - component: {fileID: 1133125477}
+  - component: {fileID: 1133125482}
+  - component: {fileID: 1133125483}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -2117,6 +2106,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1133125482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133125476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8762936e2f31ff43931fad01098f6e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1133125483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133125476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01becde421f59a348a32549d8974e4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mass: 1
+  v: 1
+  StaticFriction: 1
+  DynamicFriction: 1
+  Rotation: 1
+  acceleration: 1
+  Bounciness: 1
+  Gravity: 9.80665
 --- !u!1 &1276253170
 GameObject:
   m_ObjectHideFlags: 0
