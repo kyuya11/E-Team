@@ -2125,7 +2125,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133125476}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01becde421f59a348a32549d8974e4c6, type: 3}
   m_Name: 
@@ -2134,7 +2134,7 @@ MonoBehaviour:
   v: 1
   StaticFriction: 1
   DynamicFriction: 1
-  Rotation: 1
+  Rotsation: 1
   acceleration: 1
   Bounciness: 1
   Gravity: 9.80665
