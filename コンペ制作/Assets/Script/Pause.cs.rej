@@ -1,9 +1,0 @@
-diff a/コンペ制作/Assets/Script/Pause.cs b/コンペ制作/Assets/Script/Pause.cs	(rejected hunks)
-@@ -18,7 +18,6 @@
-     {
-         if (Input.GetKeyDown(KeyCode.P) || Input.GetButton("Start"))
-         {
--            if (Time.timeScale == 1)
-             if (pushFlag == false)
-             {
-                 pushFlag = true;
