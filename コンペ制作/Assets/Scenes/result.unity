@@ -1062,6 +1062,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc00088b62333e4a9ce2043c8ddf9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Result: {fileID: 1092223437}
+  Retry: {fileID: 733560987}
 --- !u!1 &1123109655
 GameObject:
   m_ObjectHideFlags: 0
