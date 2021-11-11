@@ -9,6 +9,7 @@ ScriptsOnlyBuild:
     - NewBehaviourScript
     - Pause
     - SceneChange
+    - Seselect
     - StartCount
     - Timer
     - Timeresult
@@ -63,37 +64,37 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 14010}
+      Script: {instanceID: 11162}
     - Class: 114
-      Script: {instanceID: 14072}
+      Script: {instanceID: 11236}
     - Class: 114
-      Script: {instanceID: 14088}
+      Script: {instanceID: 11256}
     - Class: 114
-      Script: {instanceID: 14114}
+      Script: {instanceID: 11290}
     - Class: 114
-      Script: {instanceID: 14144}
+      Script: {instanceID: 11328}
     - Class: 114
-      Script: {instanceID: 14200}
+      Script: {instanceID: 11386}
     - Class: 114
-      Script: {instanceID: 14250}
+      Script: {instanceID: 11438}
     - Class: 114
-      Script: {instanceID: 14684}
+      Script: {instanceID: 11942}
     - Class: 114
-      Script: {instanceID: 15170}
+      Script: {instanceID: 12546}
     - Class: 114
-      Script: {instanceID: 15430}
+      Script: {instanceID: 12846}
     - Class: 114
-      Script: {instanceID: 15620}
+      Script: {instanceID: 13068}
     - Class: 114
-      Script: {instanceID: 15668}
+      Script: {instanceID: 13128}
     - Class: 114
-      Script: {instanceID: 15716}
+      Script: {instanceID: 13176}
     - Class: 114
-      Script: {instanceID: 16096}
+      Script: {instanceID: 13608}
     - Class: 114
-      Script: {instanceID: 16110}
+      Script: {instanceID: 13626}
     - Class: 114
-      Script: {instanceID: 16112}
+      Script: {instanceID: 13630}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -144,19 +145,19 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 14010}
+      Script: {instanceID: 11162}
     - Class: 114
-      Script: {instanceID: 14200}
+      Script: {instanceID: 11386}
     - Class: 114
-      Script: {instanceID: 14684}
+      Script: {instanceID: 11942}
     - Class: 114
-      Script: {instanceID: 15170}
+      Script: {instanceID: 12546}
     - Class: 114
-      Script: {instanceID: 15254}
+      Script: {instanceID: 12638}
     - Class: 114
-      Script: {instanceID: 15716}
+      Script: {instanceID: 13176}
     - Class: 114
-      Script: {instanceID: 16110}
+      Script: {instanceID: 13626}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -186,32 +187,38 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 14010}
+      Script: {instanceID: 11162}
     - Class: 114
-      Script: {instanceID: 14200}
+      Script: {instanceID: 11386}
     - Class: 114
-      Script: {instanceID: 14250}
+      Script: {instanceID: 11438}
     - Class: 114
-      Script: {instanceID: 14372}
+      Script: {instanceID: 11582}
     - Class: 114
-      Script: {instanceID: 14640}
+      Script: {instanceID: 11892}
     - Class: 114
-      Script: {instanceID: 14684}
+      Script: {instanceID: 11942}
     - Class: 114
-      Script: {instanceID: 14986}
+      Script: {instanceID: 12322}
     - Class: 114
-      Script: {instanceID: 15118}
+      Script: {instanceID: 12478}
     - Class: 114
-      Script: {instanceID: 15716}
+      Script: {instanceID: 13176}
     - Class: 114
-      Script: {instanceID: 16110}
+      Script: {instanceID: 13626}
     - Class: 114
-      Script: {instanceID: 16122}
+      Script: {instanceID: 13642}
+    - Class: 114
+      Script: {instanceID: 24556}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1077,6 +1084,12 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: d76ff36394c8190b6d2b2ac6b5abda67
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SE
+  - hash:
+      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1087,9 +1100,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: d6ab8018023ee156603dfa422750a2c6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Seselect
   platform: 5
   scenePathNames:
   - Assets/Scenes/Title.unity
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/result.unity
-  playerPath: D:/sourcetree/Build8/Competition.exe
+  playerPath: "D:/competition/\u30B3\u30F3\u30DA\u5236\u4F5C/BuildTest/Competition.exe"
