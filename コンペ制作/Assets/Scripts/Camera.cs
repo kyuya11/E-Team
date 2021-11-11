@@ -12,10 +12,11 @@ public class Camera : MonoBehaviour
     private float offsetX = 0.0f;
     private float offsetZ = 0.0f;
     private Vector3 Goal;
-    private float N = 0.0f; //移動量を格納する変数
+    public float N = 0.0f; //移動量を格納する変数
 
     private Vector3 _prevPosition;
     private float velocity;
+    public float vel =0.0f;
     //Use this for initialization
 
     // Start is called before the first frame update
@@ -46,7 +47,11 @@ public class Camera : MonoBehaviour
             return;
         var position = Ball.transform.position;
         var velocity = (Vector3.Distance(position, _prevPosition) / Time.deltaTime);
-        var velCam = velocity * 0.75 / 100;
+        vel = velocity; //他のスクリプトで使う用
+        
+        Debug.Log(velocity);
+        var velCam = velocity * 0.75;
+        _prevPosition = Ball.transform.position;
         //Debug.Log(velocity);
 
         if (ballX != Ball.transform.position.x || ballZ != Ball.transform.position.z)
@@ -66,7 +71,7 @@ public class Camera : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, Goal, (float)velCam * Time.deltaTime);
         }
 
-       
+
         //Debug.Log(N);
     }
 
