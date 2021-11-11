@@ -17,7 +17,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetAxis("Vertical") == -1)
+        if (Input.GetAxis("Vertical") == -1||Input.GetAxis("Vertical2")==-1)
         {
             if (pushFlag == false)
             {
@@ -26,7 +26,7 @@ public class NewBehaviourScript : MonoBehaviour
 
             }
         }
-        else if (Input.GetAxis("Vertical") == 1)
+        else if (Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical2") == 1)
         {
             if (pushFlag == false)
             {
