@@ -5,9 +5,9 @@ using UnityEngine;
 public class Effect : MonoBehaviour
 {
     [SerializeField]
-    private ParticleSystem footSmoke;
+    private ParticleSystem FootSmoke;
     private Rigidbody rb;
-    
+    private string answerTag = "floor";
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -15,21 +15,25 @@ public class Effect : MonoBehaviour
 
     void Update()
     {
-        //速度が0.1以上なら
-        if(rb.velocity.magnitude > 0.1f)
+        if (this.gameObject.CompareTag(answerTag))
         {
-            //再生
-            if (!footSmoke.isEmitting)
+
+            //速度が0.1以上なら
+            if (rb.velocity.magnitude > 0.1f)
             {
-                footSmoke.Play();
+                //再生
+                if (!FootSmoke.isEmitting)
+                {
+                    FootSmoke.Play();
+                }
             }
-        }
-        else
-        {
-            //停止
-            if (footSmoke.isEmitting)
+            else
             {
-                footSmoke.Stop();
+                //停止
+                if (FootSmoke.isEmitting)
+                {
+                    FootSmoke.Stop();
+                }
             }
         }
     }
