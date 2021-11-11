@@ -79,6 +79,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11864}
     - Class: 114
+      Script: {instanceID: 12354}
+    - Class: 114
       Script: {instanceID: 12624}
     - Class: 114
       Script: {instanceID: 12820}
@@ -1090,4 +1092,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Title.unity
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/result.unity
-  playerPath: D:/sourcetree/Build8/Competition.exe
+  playerPath: "D:/UintyProject/\u65B0\u3057\u3044\u30D5\u30A9\u30EB\u30C0\u30FC/Competition.exe"
