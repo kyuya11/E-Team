@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Profiling;
 /// <summary>
 /// For debugging: FPS Counter
@@ -39,7 +41,7 @@ public class FPSCounter : MonoBehaviour
         if (time >= EveryCalcurationTime)
         {
             Fps = frameCount / time;
-            
+
             frameCount = 0;
             prevTime = Time.realtimeSinceStartup;
         }

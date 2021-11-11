@@ -41,7 +41,7 @@ public class StartCount : MonoBehaviour
         textCountDown.text = "1";
         yield return new WaitForSeconds(1.0f); // 引数で指定された秒数待つ
 
-        textCountDown.text = "START!";
+        textCountDown.text = "スタート！";
         yield return new WaitForSeconds(0.5f); // 引数で指定された秒数待つ
 
         textCountDown.text = "";
