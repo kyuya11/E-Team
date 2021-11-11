@@ -8,19 +8,13 @@ public class SE : MonoBehaviour
 
     public AudioClip WallSE;
     public AudioClip ItemSE;
-    public AudioClip BallSE;
 
-    private Vector3 Balltrans;
-    private float BallX;
-    private float BallZ;
 
     bool SEFlg = false;
 
     private void Start()
     {
         audio = gameObject.AddComponent<AudioSource>();
-        BallX = transform.position.x;
-        BallZ = transform.position.z;
     }
 
     private void OnCollisionEnter(Collision other)
@@ -42,27 +36,11 @@ public class SE : MonoBehaviour
         {
             Debug.Log("アイテムを取得しました");
             var time = Time.time;
-            audio.PlayOneShot(ItemSE,0.5f);
+            audio.PlayOneShot(ItemSE,0.2f);
             if (Time.time - time > 0.2f)
             {
                 audio.Stop();
             }
-        }
-    }
-    private void Update()
-    {
-        if(BallX != transform.position.x || BallZ != transform.position.z)
-        {
-            if(SEFlg == false)
-            {
-                audio.PlayOneShot(BallSE);
-                SEFlg = true;
-            }
-            
-            BallX = transform.position.x;
-            BallZ = transform.position.z;
-            Debug.Log("ボールが動いています");
-            
         }
     }
 }
