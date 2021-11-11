@@ -15,7 +15,7 @@ public class SE : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Ball")
+        if (other.gameObject.tag == "Wall")
         {
             audio.PlayOneShot(sound1);
         }
