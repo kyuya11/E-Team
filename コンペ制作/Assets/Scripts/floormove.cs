@@ -61,8 +61,7 @@ public class floormove : MonoBehaviour
             if (x > 0 || x < 0 || z > 0 || z < 0)
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(z * Rotation, 0, -x * Rotation), step);
-            }
-            else
+            } else
             {
                 if (gameObject.transform.localEulerAngles.x > 0)
                 {
@@ -82,16 +81,18 @@ public class floormove : MonoBehaviour
 
                     }
                 }
-                StartCoroutine(DelayCoroutine());
+                //StartCoroutine(DelayCoroutine());
+                z = 0f;
+                x = 0f;
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(z * Rotation, 0, -x * Rotation), step);
             }
         }
-        /*private*/
-        IEnumerator DelayCoroutine()
-        {
-            yield return new WaitForSeconds(1);
-            z = 0f;
-            x = 0f;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(z * Rotation, 0, -x * Rotation), step);
-        }
+        ///*private*/ IEnumerator DelayCoroutine()
+        //{
+        //    yield return new WaitForSeconds(1);
+        //    z = 0f;
+        //    x = 0f;
+        //    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(z * Rotation, 0, -x * Rotation), step);
+        //}
     }
 }

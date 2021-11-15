@@ -6,7 +6,11 @@ public class SE : MonoBehaviour
 {
     private AudioSource audio;
 
-    public AudioClip sound1;
+    public AudioClip WallSE;
+    public AudioClip ItemSE;
+
+
+    bool SEFlg = false;
 
     private void Start()
     {
@@ -15,9 +19,28 @@ public class SE : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Ball")
+        if (other.gameObject.tag == "Wall")
         {
-            audio.PlayOneShot(sound1);
+            var time = Time.time;
+            audio.PlayOneShot(WallSE);
+            if (Time.time - time > 0.2f)
+            {
+                audio.Stop();
+            }
+        }
+        
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Item")
+        {
+            Debug.Log("アイテムを取得しました");
+            var time = Time.time;
+            audio.PlayOneShot(ItemSE,0.2f);
+            if (Time.time - time > 0.2f)
+            {
+                audio.Stop();
+            }
         }
     }
 }
