@@ -8,6 +8,7 @@ public class Pause : MonoBehaviour
     [SerializeField]
     GameObject pausePanel;
     bool pushFlag = false;
+    bool getcountdown;
 
     private void Start()
     {
@@ -16,28 +17,32 @@ public class Pause : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) || Input.GetButton("Start"))
+        getcountdown = StartCount.CountDownStart();
+        if (getcountdown == false)
         {
-            if (pushFlag == false)
+            if (Input.GetKeyDown(KeyCode.P) || Input.GetButton("Start"))
             {
-                pushFlag = true;
-                if (Time.timeScale == 1)
-                {
-                    Time.timeScale = 0;
-                    pausePanel.SetActive(true);
-                }
-                else
+                if (pushFlag == false)
                 {
                     pushFlag = true;
-                    Time.timeScale = 1;
-                    pausePanel.SetActive(false);
+                    if (Time.timeScale == 1)
+                    {
+                        Time.timeScale = 0;
+                        pausePanel.SetActive(true);
+                    }
+                    else
+                    {
+                        pushFlag = true;
+                        Time.timeScale = 1;
+                        pausePanel.SetActive(false);
+                    }
                 }
             }
+            else
+            {
+                pushFlag = false;
+            }
+            //Debug.Log(pushFlag);
         }
-        else
-        {
-            pushFlag = false;
-        }
-        //Debug.Log(pushFlag);
     }
 }
