@@ -8,7 +8,7 @@ public class Efect : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Ball")
+        if (collision.gameObject.tag == "Ball")
         {
             Instantiate(particleObject, this.transform.position, Quaternion.identity);
 
