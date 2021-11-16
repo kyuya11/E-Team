@@ -7,9 +7,11 @@ public class ChangeRetry : MonoBehaviour
     public static bool SE;
 
     public GameObject resultpanel;
+    public GameObject Confetti;
     // Start is called before the first frame update
     void Start()
     {
+        Confetti.SetActive(true);
         resultpanel.SetActive(true);
         SE = true;
     }
@@ -19,6 +21,7 @@ public class ChangeRetry : MonoBehaviour
     {
         if (Input.GetButton("X") || Input.GetButton("B"))
         {
+            Confetti.SetActive(false);
             resultpanel.SetActive(false);
             SE = false;
         }
