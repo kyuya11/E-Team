@@ -393,6 +393,8 @@ GameObject:
   - component: {fileID: 378709771}
   - component: {fileID: 378709770}
   - component: {fileID: 378709772}
+  - component: {fileID: 378709773}
+  - component: {fileID: 378709774}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -523,6 +525,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &378709773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378709769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5f84ce9783a574b86a1339892f4c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EveryCalcurationTime: 0.5
+--- !u!114 &378709774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378709769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572c99a8543aba34e96458c9a4d09c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &385983356
 GameObject:
   m_ObjectHideFlags: 0
@@ -2468,7 +2495,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3218,7 +3245,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 12
+      scalar: 6
       minScalar: 10
       maxCurve:
         serializedVersion: 2

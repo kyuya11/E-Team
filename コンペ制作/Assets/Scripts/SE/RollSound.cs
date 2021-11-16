@@ -50,6 +50,6 @@ public class RollSound : MonoBehaviour
         //audio.volume = 0.5f;
         BallX = transform.position.x;
         BallZ = transform.position.z;
-        Debug.Log("ボールが動いています");
+        //Debug.Log("ボールが動いています");
     }
 }

@@ -49,7 +49,7 @@ public class Camera : MonoBehaviour
         var velocity = (Vector3.Distance(position, _prevPosition) / Time.deltaTime);
         vel = velocity; //他のスクリプトで使う用
         
-        Debug.Log(velocity);
+        //Debug.Log(velocity);
         var velCam = velocity * 0.75;
         _prevPosition = Ball.transform.position;
         //Debug.Log(velocity);
