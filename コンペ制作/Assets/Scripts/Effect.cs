@@ -13,9 +13,9 @@ public class Effect : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void OnCollisionStay(Collision other)
     {
-        if (this.gameObject.CompareTag(answerTag))
+        if (other.gameObject.CompareTag(answerTag))
         {
 
             //速度が0.1以上なら
