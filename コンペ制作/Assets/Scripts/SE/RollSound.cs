@@ -10,14 +10,14 @@ public class RollSound : MonoBehaviour
     private float BallZ;
     bool SEFlg;
     public AudioClip BallSE;
-    Camera cam;
+    BallCamera cam;
 
     private Rigidbody ballRb;
     // Start is called before the first frame update
     void Start()
     {
         camera = GameObject.Find("Main Camera");
-        cam = camera.GetComponent<Camera>(); 
+        cam = camera.GetComponent<BallCamera>(); 
         audio = gameObject.AddComponent<AudioSource>();
         audio.loop = true;
         audio.clip = BallSE;
@@ -50,6 +50,6 @@ public class RollSound : MonoBehaviour
         //audio.volume = 0.5f;
         BallX = transform.position.x;
         BallZ = transform.position.z;
-        Debug.Log("ボールが動いています");
+        //Debug.Log("ボールが動いています");
     }
 }
