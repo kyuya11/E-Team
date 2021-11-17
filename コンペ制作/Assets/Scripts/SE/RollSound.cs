@@ -31,7 +31,7 @@ public class RollSound : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         audio.volume = 0.5f + (cam.vel / 5);
         //yield return new WaitForSeconds(1);

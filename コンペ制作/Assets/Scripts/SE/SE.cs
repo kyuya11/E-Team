@@ -34,7 +34,7 @@ public class SE : MonoBehaviour
     {
         if (other.gameObject.tag == "Item")
         {
-            Debug.Log("アイテムを取得しました");
+            //Debug.Log("アイテムを取得しました");
             var time = Time.time;
             audio.PlayOneShot(ItemSE,0.2f);
             if (Time.time - time > 0.2f)
