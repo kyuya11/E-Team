@@ -17,7 +17,7 @@ public class RollSound : MonoBehaviour
     void Start()
     {
         camera = GameObject.Find("Main Camera");
-        cam = camera.GetComponent<BallCamera>(); 
+        cam = camera.GetComponent<BallCamera>();
         audio = gameObject.AddComponent<AudioSource>();
         audio.loop = true;
         audio.clip = BallSE;
@@ -31,7 +31,7 @@ public class RollSound : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         audio.volume = cam.vel / 7;
         //yield return new WaitForSeconds(1);
@@ -44,9 +44,9 @@ public class RollSound : MonoBehaviour
                 SEFlg = true;
             }
         }
-        
-        
-        
+
+
+
         //audio.volume = 0.5f;
         BallX = transform.position.x;
         BallZ = transform.position.z;

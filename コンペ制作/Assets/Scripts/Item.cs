@@ -8,6 +8,7 @@ public class Item : MonoBehaviour
 {
     public Text Counttext;
     private static int getItemCount;
+
     void Start() 
     {
         getItemCount = 0;
@@ -15,6 +16,7 @@ public class Item : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.tag == "Ball")    //当たった相手のTagがBallだったら
         {
             gameObject.SetActive(false);     //シーンに置かれたアイテムを消します
