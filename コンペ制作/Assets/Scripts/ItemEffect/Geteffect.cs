@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Geteffect: MonoBehaviour
+public class Geteffect : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("GetEffect")]
@@ -12,12 +12,10 @@ public class Geteffect: MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Ball")
-        {
-            ParticleSystem newParticle = Instantiate(particle);
-            newParticle.transform.position = this.transform.position;
-            newParticle.Play();
-            Destroy(newParticle.gameObject, 1.0f);
-        }
+        ParticleSystem newParticle = Instantiate(particle);
+        newParticle.transform.position = this.transform.position;
+        newParticle.Play();
+        Destroy(newParticle.gameObject, 1.0f);
     }
+
 }
