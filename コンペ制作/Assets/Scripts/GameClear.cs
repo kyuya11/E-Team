@@ -16,9 +16,20 @@ public class GameClear : MonoBehaviour
     {
         clearText.enabled = false;
     }
+    void Update()
+    {
+        if (resultItemCount >= 12)
+        {
+            if (Time.unscaledTime - next >= 1.0f)
+            {
+                SceneManager.LoadScene("result");
+                Time.timeScale = 1f;
+            }
+        }
+    }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         resultItemCount = Item.GetItemCount();
         //Debug.Log(Time.unscaledTime - next);
@@ -33,11 +44,7 @@ public class GameClear : MonoBehaviour
 
             Time.timeScale = 0f;
 
-            if (Time.unscaledTime - next >= 1.0f)
-            {
-                SceneManager.LoadScene("result");
-                Time.timeScale = 1f;
-            }
+            
         }
     }
 

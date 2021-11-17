@@ -41,14 +41,14 @@ public class menuselect : MonoBehaviour
         }
 
 
+        
         switch (MenuNumber)
         {
             case 0:
                 rect.localPosition = new Vector3(-154, -36, 0);
                 if (Input.GetButton("A"))
                 {
-                    Time.timeScale = 1;
-                    SceneManager.LoadScene("SampleScene");
+                    StartCoroutine(RetryCoroutine());
                 }
                 //Debug.Log("0");
                 break;
@@ -56,8 +56,7 @@ public class menuselect : MonoBehaviour
                 rect.localPosition = new Vector3(-188, -91, 0);
                 if (Input.GetButton("A"))
                 {
-                    Time.timeScale = 1;
-                    SceneManager.LoadScene("Title");
+                    StartCoroutine(TitleCoroutine());
 
                 }
                 //Debug.Log("1");
@@ -66,12 +65,31 @@ public class menuselect : MonoBehaviour
                 rect.localPosition = new Vector3(-206, -145, 0);
                 if (Input.GetButton("A"))
                 {
-                    Application.Quit();
-
+                    StartCoroutine(EndCoroutine());
                 }
                 //Debug.Log("2");
                 break;
 
         }
+    }
+    private IEnumerator RetryCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1;
+    }
+    private IEnumerator TitleCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        SceneManager.LoadScene("Title");
+        Time.timeScale = 1;
+    }
+    private IEnumerator EndCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+        Application.Quit();
+
     }
 }

@@ -10,6 +10,7 @@ public class NewBehaviourScript : MonoBehaviour
     RectTransform rect;
 
     bool pushFlag = false;
+    bool flg = false;
     void Start()
     {
         rect = GetComponent<RectTransform>();
@@ -47,8 +48,7 @@ public class NewBehaviourScript : MonoBehaviour
                 rect.localPosition = new Vector3(-420, 40, 0);
                 if (Input.GetButton("A"))
                 {
-                    Time.timeScale = 1;
-                    SceneManager.LoadScene("SampleScene");
+                    StartCoroutine(RetryCoroutine());
                 }
                 //Debug.Log("0");
                 break;
@@ -56,8 +56,7 @@ public class NewBehaviourScript : MonoBehaviour
                 rect.localPosition = new Vector3(-420, -80, 0);
                 if (Input.GetButton("A"))
                 {
-                    Time.timeScale = 1;
-                    SceneManager.LoadScene("Title");
+                    StartCoroutine(TitleCoroutine());
 
                 }
                 //Debug.Log("1");
@@ -66,12 +65,31 @@ public class NewBehaviourScript : MonoBehaviour
                 rect.localPosition = new Vector3(-420, -200, 0);
                 if (Input.GetButton("A"))
                 {
-                    Application.Quit();
-
+                    StartCoroutine(EndCoroutine());
                 }
                 //Debug.Log("2");
                 break;
 
         }
+    }
+    private IEnumerator RetryCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1;
+    }
+    private IEnumerator TitleCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        SceneManager.LoadScene("Title");
+        Time.timeScale = 1;
+    }
+    private IEnumerator EndCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+        Application.Quit();
+
     }
 }
