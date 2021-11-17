@@ -33,7 +33,7 @@ public class RollSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        audio.volume = 0.5f + (cam.vel / 5);
+        audio.volume = cam.vel / 7;
         //yield return new WaitForSeconds(1);
         if (BallX != transform.position.x || BallZ != transform.position.z)
         {
