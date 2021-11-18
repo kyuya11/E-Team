@@ -63,9 +63,9 @@ public class HitFloor : MonoBehaviour
         Debug.Log(Angle);
         Debug.Log(CstAngle);
 
-        if (Angle >= 90)
+        if (Angle <= 92 || Angle >= 89)
         {
-            //Debug.Log("床の上です");
+            Debug.Log("床の上です");
         }
     }
 }
