@@ -18,10 +18,12 @@ public class Pause : MonoBehaviour
     void Update()
     {
         getcountdown = StartCount.CountDownStart();
+
         if (getcountdown == false)
         {
             if (Input.GetKeyDown(KeyCode.P) || Input.GetButton("Start"))
             {
+
                 if (pushFlag == false)
                 {
                     pushFlag = true;
@@ -37,6 +39,7 @@ public class Pause : MonoBehaviour
                         pausePanel.SetActive(false);
                     }
                 }
+
             }
             else
             {

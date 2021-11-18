@@ -9,11 +9,12 @@ ScriptsOnlyBuild:
     - FPSCounter
     - FrameRate
     - GameClear
+    - Geteffect
+    - HitFloor
     - Item
     - NewBehaviourScript
     - Pause
     - Position
-    - RollSound
     - SE
     - SceneChange
     - Seselect
@@ -77,55 +78,59 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11206}
+      Script: {instanceID: 11222}
     - Class: 114
-      Script: {instanceID: 11290}
+      Script: {instanceID: 11306}
     - Class: 114
-      Script: {instanceID: 11340}
+      Script: {instanceID: 11356}
     - Class: 114
-      Script: {instanceID: 11402}
+      Script: {instanceID: 11416}
     - Class: 114
-      Script: {instanceID: 11452}
+      Script: {instanceID: 11418}
     - Class: 114
-      Script: {instanceID: 11622}
+      Script: {instanceID: 11468}
     - Class: 114
-      Script: {instanceID: 11824}
+      Script: {instanceID: 11638}
     - Class: 114
-      Script: {instanceID: 11842}
+      Script: {instanceID: 11790}
     - Class: 114
-      Script: {instanceID: 11852}
+      Script: {instanceID: 11840}
     - Class: 114
-      Script: {instanceID: 11884}
+      Script: {instanceID: 11858}
     - Class: 114
-      Script: {instanceID: 11904}
+      Script: {instanceID: 11892}
     - Class: 114
-      Script: {instanceID: 12116}
+      Script: {instanceID: 11918}
     - Class: 114
-      Script: {instanceID: 12220}
+      Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12394}
+      Script: {instanceID: 12132}
     - Class: 114
-      Script: {instanceID: 12410}
+      Script: {instanceID: 12238}
     - Class: 114
-      Script: {instanceID: 12440}
+      Script: {instanceID: 12412}
     - Class: 114
-      Script: {instanceID: 12686}
+      Script: {instanceID: 12428}
     - Class: 114
-      Script: {instanceID: 12974}
+      Script: {instanceID: 12458}
     - Class: 114
-      Script: {instanceID: 13174}
+      Script: {instanceID: 12646}
     - Class: 114
-      Script: {instanceID: 13266}
+      Script: {instanceID: 12708}
     - Class: 114
-      Script: {instanceID: 13300}
+      Script: {instanceID: 12996}
     - Class: 114
-      Script: {instanceID: 13364}
+      Script: {instanceID: 13122}
     - Class: 114
-      Script: {instanceID: 13378}
+      Script: {instanceID: 13288}
     - Class: 114
-      Script: {instanceID: 13380}
+      Script: {instanceID: 13384}
     - Class: 114
-      Script: {instanceID: 13420}
+      Script: {instanceID: 13398}
+    - Class: 114
+      Script: {instanceID: 13400}
+    - Class: 114
+      Script: {instanceID: 13440}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -180,19 +185,19 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11206}
+      Script: {instanceID: 11222}
     - Class: 114
-      Script: {instanceID: 11402}
+      Script: {instanceID: 11416}
     - Class: 114
-      Script: {instanceID: 11904}
+      Script: {instanceID: 11918}
     - Class: 114
-      Script: {instanceID: 12410}
+      Script: {instanceID: 12428}
     - Class: 114
-      Script: {instanceID: 12496}
+      Script: {instanceID: 12514}
     - Class: 114
-      Script: {instanceID: 12974}
+      Script: {instanceID: 12996}
     - Class: 114
-      Script: {instanceID: 13378}
+      Script: {instanceID: 13398}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -233,29 +238,29 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11206}
+      Script: {instanceID: 11222}
     - Class: 114
-      Script: {instanceID: 11402}
+      Script: {instanceID: 11416}
     - Class: 114
-      Script: {instanceID: 11452}
+      Script: {instanceID: 11468}
     - Class: 114
-      Script: {instanceID: 11578}
+      Script: {instanceID: 11594}
     - Class: 114
-      Script: {instanceID: 11774}
+      Script: {instanceID: 11790}
     - Class: 114
-      Script: {instanceID: 11858}
+      Script: {instanceID: 11872}
     - Class: 114
-      Script: {instanceID: 11904}
+      Script: {instanceID: 11918}
     - Class: 114
-      Script: {instanceID: 12056}
+      Script: {instanceID: 12070}
     - Class: 114
-      Script: {instanceID: 12224}
+      Script: {instanceID: 12242}
     - Class: 114
-      Script: {instanceID: 12358}
+      Script: {instanceID: 12376}
     - Class: 114
-      Script: {instanceID: 12974}
+      Script: {instanceID: 12996}
     - Class: 114
-      Script: {instanceID: 13378}
+      Script: {instanceID: 13398}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -357,12 +362,6 @@ ScriptsOnlyBuild:
     className: Bound
   - hash:
       serializedVersion: 2
-      Hash: 899362f0dead0cb96ad9e8362f1b2506
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Efect
-  - hash:
-      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -385,6 +384,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Text
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HitFloor
   - hash:
       serializedVersion: 2
       Hash: 499fd23433e68e265d153aa6b95d0047
@@ -579,12 +584,6 @@ ScriptsOnlyBuild:
     className: Timer
   - hash:
       serializedVersion: 2
-      Hash: 899362f0dead0cb96ad9e8362f1b2506
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: collisionEffect
-  - hash:
-      serializedVersion: 2
       Hash: f94829f13e865f5f4d5622986689904e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -597,10 +596,10 @@ ScriptsOnlyBuild:
     className: CinemachineConfiner2D
   - hash:
       serializedVersion: 2
-      Hash: b6004b0f46db6e467be996d1d44b44b0
+      Hash: 8e090a935c14900dad7d6a71d007b093
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: RollSound
+    className: FPSCounter
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -675,6 +674,12 @@ ScriptsOnlyBuild:
     className: StopRigidbody
   - hash:
       serializedVersion: 2
+      Hash: e693421d1b5a30cb92dcaab52efb0c13
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Geteffect
+  - hash:
+      serializedVersion: 2
       Hash: 4aac268d7e435f7a65add91aaba819a4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -697,6 +702,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: b6004b0f46db6e467be996d1d44b44b0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RollSound
   - hash:
       serializedVersion: 2
       Hash: 7ca765ad7969aae95e8011264b9c4046
@@ -873,10 +884,22 @@ ScriptsOnlyBuild:
     className: CinemachineBlendListCamera
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Gravity
+  - hash:
+      serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: InputField
+  - hash:
+      serializedVersion: 2
+      Hash: 899362f0dead0cb96ad9e8362f1b2506
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: collisionEffect
   - hash:
       serializedVersion: 2
       Hash: c9a8b80298a116835b51ba1cf9284367
@@ -1035,6 +1058,12 @@ ScriptsOnlyBuild:
     className: CinemachineInputProvider
   - hash:
       serializedVersion: 2
+      Hash: d425ea578f895be3f9e647a902690bab
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BallCamera
+  - hash:
+      serializedVersion: 2
       Hash: ffd3ed4fcd23b3e7745287c99a637247
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -1071,12 +1100,6 @@ ScriptsOnlyBuild:
     className: Ball
   - hash:
       serializedVersion: 2
-      Hash: d425ea578f895be3f9e647a902690bab
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BallCamera
-  - hash:
-      serializedVersion: 2
       Hash: e70e7b311a1620c2e899545b2e1fdfae
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1111,12 +1134,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
-  - hash:
-      serializedVersion: 2
-      Hash: 8e090a935c14900dad7d6a71d007b093
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FPSCounter
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1242,4 +1259,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Title.unity
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/result.unity
-  playerPath: D:/sourcetree/Build8/Competition.exe
+  playerPath: "C:/Users/kbc12006094/Documents/conpe/\u30B3\u30F3\u30DA\u5236\u4F5C/TestBuild/Competition.exe"

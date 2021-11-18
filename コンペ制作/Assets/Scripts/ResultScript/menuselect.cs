@@ -10,6 +10,9 @@ public class menuselect : MonoBehaviour
     RectTransform rect;
 
     bool pushFlag = false;
+    bool Selectflag;
+    bool Resultflag;
+
     void Start()
     {
         rect = GetComponent<RectTransform>();
@@ -17,27 +20,36 @@ public class menuselect : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetAxis("Vertical") == -1|| Input.GetAxis("Vertical2") == -1)
-        {
-            if (pushFlag == false)
-            {
-                pushFlag = true;
-                if (++MenuNumber > 2) MenuNumber = 0;
+        Selectflag = next.GetMenuSelect();
+        Resultflag = ResultSE.GetResultSEFlag();
 
-            }
-        }
-        else if (Input.GetAxis("Vertical") == 1|| Input.GetAxis("Vertical2") == 1)
+        if (Selectflag == true)
         {
-            if (pushFlag == false)
+            if (Resultflag == false)
             {
-                pushFlag = true;
-                if (--MenuNumber < 0) MenuNumber = 2;
+                if (Input.GetAxis("Vertical") == -1 || Input.GetAxis("Vertical2") == -1)
+                {
+                    if (pushFlag == false)
+                    {
+                        pushFlag = true;
+                        if (++MenuNumber > 2) MenuNumber = 0;
 
+                    }
+                }
+                else if (Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical2") == 1)
+                {
+                    if (pushFlag == false)
+                    {
+                        pushFlag = true;
+                        if (--MenuNumber < 0) MenuNumber = 2;
+
+                    }
+                }
+                else
+                {
+                    pushFlag = false;
+                }
             }
-        }
-        else
-        {
-            pushFlag = false;
         }
 
 

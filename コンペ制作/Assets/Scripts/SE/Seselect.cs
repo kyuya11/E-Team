@@ -7,6 +7,7 @@ public class Seselect : MonoBehaviour
     public AudioClip sound1;
     public AudioClip sound2;
     bool getSE;
+    private static bool getSEflag;   //選択した後に操作できないようにするためのフラグ
 
     AudioSource audioSource;
 
@@ -14,59 +15,46 @@ public class Seselect : MonoBehaviour
     {
         //Componentを取得
         audioSource = GetComponent<AudioSource>();
-        getSE = false;
+        getSEflag = false;
     }
 
     void Update()
     {
-
-        if (Input.GetAxis("Vertical") == -1 || Input.GetAxis("Vertical2") == -1)
-        {
-            if (getSE == false)
+        if (getSEflag == false){  //falseの間操作可能
+            if (Input.GetAxis("Vertical") == -1 || Input.GetAxis("Vertical2") == -1)
             {
-                audioSource.PlayOneShot(sound1);
-                getSE = true;
+                if (getSE == false)
+                {
+                    audioSource.PlayOneShot(sound1);
+                    getSE = true;
+                }
+            }
+            else if (Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical2") == 1)
+            {
+                if (getSE == false)
+                {
+                    audioSource.PlayOneShot(sound1);
+                    getSE = true;
+                }
+            }
+            else if (Input.GetButton("A"))
+            {
+                if (getSE == false)
+                {
+                    audioSource.PlayOneShot(sound2);
+                    getSE = true;
+                    getSEflag = true;
+                }
+            }
+            else
+            {
+                getSE = false;
             }
         }
-        else if (Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical2") == 1)
-        {
-            if (getSE == false)
-            {
-                audioSource.PlayOneShot(sound1);
-                getSE = true;
-            }
-        }else if(Input.GetButton("A"))
-        {
-            if (getSE == false)
-            {
-                audioSource.PlayOneShot(sound2);
-                getSE = true;
-            }
-        }
-        else
-        {
-            getSE = false;
-        }
+    }
 
-        //if (getSE == false)
-        //{
-        //    if (Input.GetAxisRaw("Vertical") == 1)
-        //    {
-        //        StartCoroutine(SoundPlay());
-        //    }
-        //    else if (Input.GetAxisRaw("Vertical") == -1)
-        //    {
-        //        StartCoroutine(SoundPlay());
-        //    }
-        //}
-
-        //// 右
-        //if (getSE == false)
-        //{
-        //    if (Input.GetButtonDown("A"))
-        //    {
-        //        StartCoroutine(SoundPlay2());
-        //    }
-        //}
+    public static bool GetSEFlag()
+    {
+        return getSEflag;
     }
 }
