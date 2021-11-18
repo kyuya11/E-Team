@@ -12,10 +12,12 @@ public class Geteffect : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        ParticleSystem newParticle = Instantiate(particle);
-        newParticle.transform.position = this.transform.position;
-        newParticle.Play();
-        Destroy(newParticle.gameObject, 1.0f);
+        if(other.gameObject.tag == "Ball") { 
+            ParticleSystem newParticle = Instantiate(particle);
+            newParticle.transform.position = this.transform.position;
+            newParticle.Play();
+            Destroy(newParticle.gameObject, 1.0f);
+        }
     }
 
 }

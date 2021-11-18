@@ -13,9 +13,11 @@ public class HitFloor : MonoBehaviour
 
     private Vector3 Normal;
     private float Angle;
+    private int CstAngle;
     // Start is called before the first frame update
     void Start()
     {
+        Angle = 0.0f;
         ver1 = GameObject.Find("Vertex1");
         ver2 = GameObject.Find("Vertex2");
         cen = GameObject.Find("Center");
@@ -33,12 +35,16 @@ public class HitFloor : MonoBehaviour
         var perp = Vector3.Cross(Side1, Side2); //perp:perpendicularの略 意味:垂直
 
         Debug.Log(perp);
+        Debug.Log(cen.transform.position);
 
-        ballP = new Vector3(Ball.transform.position.x, Ball.transform.position.y - 1.0f, Ball.transform.position.z);
+        ballP = new Vector3(Ball.transform.position.x, Ball.transform.position.y - 1.5f, Ball.transform.position.z);
 
         Angle = Vector3.Angle(perp, ballP);
+        CstAngle = (int)Angle;
         Debug.Log(Angle);
-        if(Angle >= 90)
+        Debug.Log(CstAngle);
+
+        if (Angle >= 90)
         {
             //Debug.Log("床の上です");
         }
