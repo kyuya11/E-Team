@@ -10,7 +10,8 @@ public class NewBehaviourScript : MonoBehaviour
     RectTransform rect;
 
     bool pushFlag = false;
-    bool flg = false;
+    bool SEflag = false;
+
     void Start()
     {
         rect = GetComponent<RectTransform>();
@@ -18,29 +19,32 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetAxis("Vertical") == -1||Input.GetAxis("Vertical2")==-1)
-        {
-            if (pushFlag == false)
-            {
-                pushFlag = true;
-                if (++MenuNumber > 2) MenuNumber = 0;
+        SEflag = Seselect.GetSEFlag();
 
+        if (SEflag == false)
+        {
+            if (Input.GetAxis("Vertical") == -1 || Input.GetAxis("Vertical2") == -1)
+            {
+                if (pushFlag == false)
+                {
+                    pushFlag = true;
+                    if (++MenuNumber > 2) MenuNumber = 0;
+                }
+            }
+            else if (Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical2") == 1)
+            {
+                if (pushFlag == false)
+                {
+                    pushFlag = true;
+                    if (--MenuNumber < 0) MenuNumber = 2;
+
+                }
+            }
+            else
+            {
+                pushFlag = false;
             }
         }
-        else if (Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical2") == 1)
-        {
-            if (pushFlag == false)
-            {
-                pushFlag = true;
-                if (--MenuNumber < 0) MenuNumber = 2;
-
-            }
-        }
-        else
-        {
-            pushFlag = false;
-        }
-
 
         switch (MenuNumber)
         {
@@ -57,7 +61,6 @@ public class NewBehaviourScript : MonoBehaviour
                 if (Input.GetButton("A"))
                 {
                     StartCoroutine(TitleCoroutine());
-
                 }
                 //Debug.Log("1");
                 break;
