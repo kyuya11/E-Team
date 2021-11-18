@@ -45,6 +45,6 @@ public class FPSCounter : MonoBehaviour
             frameCount = 0;
             prevTime = Time.realtimeSinceStartup;
         }
-        Debug.Log(Fps);
+        //Debug.Log(Fps);
     }
 }

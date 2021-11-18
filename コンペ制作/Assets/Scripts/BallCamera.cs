@@ -16,7 +16,8 @@ public class BallCamera : MonoBehaviour
 
     private Vector3 _prevPosition;
     private float velocity;
-    public float vel = 0.0f;
+    public float vel =0.0f;
+    private double velCam = 0.0f;
     //Use this for initialization
 
     // Start is called before the first frame update
@@ -48,9 +49,9 @@ public class BallCamera : MonoBehaviour
         var position = Ball.transform.position;
         var velocity = (Vector3.Distance(position, _prevPosition) / Time.deltaTime);
         vel = velocity; //他のスクリプトで使う用
-
+        
         //Debug.Log(velocity);
-        var velCam = velocity * 0.75;
+        velCam = velocity * 0.75;
         _prevPosition = Ball.transform.position;
         //Debug.Log(velocity);
 
@@ -66,13 +67,20 @@ public class BallCamera : MonoBehaviour
 
         N = Mathf.Abs(Vector3.Distance(transform.position, Goal)); //カメラのスタート位置とカメラの目標地点の距離
 
+        //if (N >= 1.5f)
+        //{
+        //    transform.position = Vector3.Lerp(transform.position, Goal, (float)velCam * Time.deltaTime);
+        //}
+
+
+        //Debug.Log(N);
+    }
+    private void LateUpdate()
+    {
         if (N >= 1.5f)
         {
             transform.position = Vector3.Lerp(transform.position, Goal, (float)velCam * Time.deltaTime);
         }
-
-
-        //Debug.Log(N);
     }
 
 }
