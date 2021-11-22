@@ -7472,6 +7472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WallSE: {fileID: 8300000, guid: 9b6667db8b6fc43308a85a8285699b94, type: 3}
   ItemSE: {fileID: 8300000, guid: 139393c15b386554e951588e7fa3c0a9, type: 3}
+  ojamaSE: {fileID: 8300000, guid: 6cde3ff8bbc74ef44a5a56a67989d44c, type: 3}
 --- !u!1 &1276253170
 GameObject:
   m_ObjectHideFlags: 0
