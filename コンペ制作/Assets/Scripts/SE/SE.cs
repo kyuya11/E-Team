@@ -8,6 +8,7 @@ public class SE : MonoBehaviour
 
     public AudioClip WallSE;
     public AudioClip ItemSE;
+    public AudioClip ojamaSE;
 
 
     bool SEFlg = false;
@@ -28,7 +29,7 @@ public class SE : MonoBehaviour
                 audio.Stop();
             }
         }
-        
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -36,11 +37,24 @@ public class SE : MonoBehaviour
         {
             //Debug.Log("アイテムを取得しました");
             var time = Time.time;
-            audio.PlayOneShot(ItemSE,0.2f);
+            audio.PlayOneShot(ItemSE, 0.2f);
             if (Time.time - time > 0.2f)
             {
                 audio.Stop();
             }
         }
+
+
+        if (other.gameObject.tag == "ojama")
+        {
+            //Debug.Log("お邪魔アイテムを取得しました");
+            var time = Time.time;
+            audio.PlayOneShot(ojamaSE, 0.2f);
+            if (Time.time - time > 0.2f)
+            {
+                audio.Stop();
+            }
+        }
+
     }
 }

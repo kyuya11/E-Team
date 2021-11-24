@@ -9,7 +9,7 @@ TagManager:
   - Wall
   - Item
   - FxTemporaire
-  - Ojama
+  - ojama
   layers:
   - Default
   - TransparentFX
