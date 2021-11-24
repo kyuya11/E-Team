@@ -16,7 +16,7 @@ public class SceneChange : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("StageSelect");
         }
     }
 }

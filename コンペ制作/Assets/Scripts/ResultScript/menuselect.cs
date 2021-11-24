@@ -12,6 +12,7 @@ public class menuselect : MonoBehaviour
     bool pushFlag = false;
     bool Selectflag;
     bool Resultflag;
+    int StageNumber = 0;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class menuselect : MonoBehaviour
     {
         Selectflag = next.GetMenuSelect();
         Resultflag = ResultSE.GetResultSEFlag();
+        StageNumber = StageSelect.StageNumber();
 
         if (Selectflag == true)
         {
@@ -87,9 +89,11 @@ public class menuselect : MonoBehaviour
     private IEnumerator RetryCoroutine()
     {
         yield return new WaitForSecondsRealtime(1.5f);
-
-        SceneManager.LoadScene("SampleScene");
-        Time.timeScale = 1;
+        if (StageNumber == 0) {
+            SceneManager.LoadScene("Stage1");
+        } else if (StageNumber == 1) { 
+            SceneManager.LoadScene("Stage2");
+        } Time.timeScale = 1;
     }
     private IEnumerator TitleCoroutine()
     {
