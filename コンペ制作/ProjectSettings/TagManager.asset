@@ -8,6 +8,8 @@ TagManager:
   - floor
   - Wall
   - Item
+  - FxTemporaire
+  - Ojama
   layers:
   - Default
   - TransparentFX
