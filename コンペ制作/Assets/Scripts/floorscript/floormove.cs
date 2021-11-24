@@ -27,7 +27,7 @@ public class floormove : MonoBehaviour
             //transform.rotation = Quaternion.Euler(z * Rotation, 0, -x * Rotation);
 
             var body = GameObject.Find("Ball").GetComponent<Rigidbody>();
-            Rigidbody rigidbody = GameObject.Find("floor").GetComponent<Rigidbody>();
+            //Rigidbody rigidbody = GameObject.Find("floor").GetComponent<Rigidbody>();
 
             step = speed * Time.deltaTime;
             if (x > 0f)

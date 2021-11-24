@@ -56,16 +56,16 @@ public class HitFloor : MonoBehaviour
         Debug.Log(perp);
         //Debug.Log(cen.transform.position);
 
-        ballP = new Vector3(Ball.transform.position.x, Ball.transform.position.y - 1.5f, Ball.transform.position.z);
+        ballP = new Vector3(Ball.transform.position.x, Ball.transform.position.y - 1.0f, Ball.transform.position.z);
 
-        Angle = Vector3.Angle(perp, ballP);
+        Angle = Vector3.Angle(perp - cen.transform.position, cen.transform.position - ballP);
         CstAngle = (int)Angle;
         Debug.Log(Angle);
         Debug.Log(CstAngle);
 
-        if (Angle >= 90)
+        if (Angle <= 92 || Angle >= 89)
         {
-            //Debug.Log("床の上です");
+            Debug.Log("床の上です");
         }
     }
 }
