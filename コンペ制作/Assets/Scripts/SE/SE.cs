@@ -45,7 +45,7 @@ public class SE : MonoBehaviour
         }
 
 
-        if (other.gameObject.tag == "ojama")
+        if (other.gameObject.tag == "Ojama")
         {
             //Debug.Log("お邪魔アイテムを取得しました");
             var time = Time.time;
