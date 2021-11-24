@@ -4,14 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour
+public class StageSelect : MonoBehaviour
 {
-    static int MenuNumber = 0;
+    public static int MenuNumber = 0;
     RectTransform rect;
 
     bool pushFlag = false;
-    bool SEflag = false;
-    int StageNumber = 0;
+    bool Resultflag;
 
     void Start()
     {
@@ -20,17 +19,17 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     {
-        SEflag = Seselect.GetSEFlag();
-        StageNumber = StageSelect.StageNumber();
 
-        if (SEflag == false)
+        Resultflag = StageSelectSE.GetResultSEFlag();
+        if (Resultflag == false)
         {
             if (Input.GetAxis("Vertical") == -1 || Input.GetAxis("Vertical2") == -1)
             {
                 if (pushFlag == false)
                 {
                     pushFlag = true;
-                    if (++MenuNumber > 2) MenuNumber = 0;
+                    if (++MenuNumber > 1) MenuNumber = 0;
+
                 }
             }
             else if (Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical2") == 1)
@@ -38,7 +37,7 @@ public class NewBehaviourScript : MonoBehaviour
                 if (pushFlag == false)
                 {
                     pushFlag = true;
-                    if (--MenuNumber < 0) MenuNumber = 2;
+                    if (--MenuNumber < 0) MenuNumber = 1;
 
                 }
             }
@@ -46,12 +45,15 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 pushFlag = false;
             }
+
         }
+
+
 
         switch (MenuNumber)
         {
             case 0:
-                rect.localPosition = new Vector3(-420, 40, 0);
+                rect.localPosition = new Vector3(-120, 30, 0);
                 if (Input.GetButton("A"))
                 {
                     StartCoroutine(RetryCoroutine());
@@ -59,49 +61,32 @@ public class NewBehaviourScript : MonoBehaviour
                 //Debug.Log("0");
                 break;
             case 1:
-                rect.localPosition = new Vector3(-420, -80, 0);
+                rect.localPosition = new Vector3(-120, -35, 0);
                 if (Input.GetButton("A"))
                 {
                     StartCoroutine(TitleCoroutine());
+
                 }
                 //Debug.Log("1");
                 break;
-            case 2:
-                rect.localPosition = new Vector3(-420, -200, 0);
-                if (Input.GetButton("A"))
-                {
-                    StartCoroutine(EndCoroutine());
-                }
-                //Debug.Log("2");
-                break;
-
         }
     }
     private IEnumerator RetryCoroutine()
     {
         yield return new WaitForSecondsRealtime(1.5f);
 
-        if (StageNumber == 0)
-        {
-            SceneManager.LoadScene("Stage1");
-        }
-        else if (StageNumber == 1)
-        {
-            SceneManager.LoadScene("Stage2");
-        }
+        SceneManager.LoadScene("Stage1");
         Time.timeScale = 1;
     }
     private IEnumerator TitleCoroutine()
     {
         yield return new WaitForSecondsRealtime(1.5f);
 
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("Stage2");
         Time.timeScale = 1;
     }
-    private IEnumerator EndCoroutine()
+    public static int StageNumber()
     {
-        yield return new WaitForSecondsRealtime(1.5f);
-        Application.Quit();
-
+        return MenuNumber;
     }
 }
