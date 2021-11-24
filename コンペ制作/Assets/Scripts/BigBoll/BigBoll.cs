@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BigBoll : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float thrust = 1.0f;
+    //public Rigidbody rb;
+    //public float thrust = 1.0f;
     float x = 0f;
     float z = 0f;
     bool getcountdown;
@@ -14,7 +14,7 @@ public class BigBoll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb.GetComponent<Rigidbody>();
+        //rb.GetComponent<Rigidbody>();
     }
     void OnTriggerEnter(Collider other)
     {
