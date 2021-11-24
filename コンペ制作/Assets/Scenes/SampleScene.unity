@@ -12254,11 +12254,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1133125476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc410a9f15c6c0448b3f4594c1542192, type: 3}
+  m_Script: {fileID: 11500000, guid: af4362f0a223d454f92c701a5b2d3d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WallSE: {fileID: 8300000, guid: 9b6667db8b6fc43308a85a8285699b94, type: 3}
-  ItemSE: {fileID: 8300000, guid: 139393c15b386554e951588e7fa3c0a9, type: 3}
+  WallSE: {fileID: 0}
+  ItemSE: {fileID: 0}
+  ojamaSE: {fileID: 0}
 --- !u!114 &1133125484
 MonoBehaviour:
   m_ObjectHideFlags: 0
