@@ -7,7 +7,7 @@ public class Ojama : MonoBehaviour
     public Material[] _material;
     private int i; //配列の要素番号
     GameObject SpeedDown;
-    GameObject Ball;
+    GameObject Poison;
     bool Flg;
     bool TimeFlg; //Timekeep専用
     private float Timekeep;
@@ -19,27 +19,29 @@ public class Ojama : MonoBehaviour
         Flg = false;
         Timekeep = 0.0f;
         SpeedDown = GameObject.Find("PoisonSmoke");
-        Ball = GameObject.Find("Ball");
+        Poison = GameObject.Find("Poison");
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if(Flg == true)
+        if (Flg == true)
         {
-            if(TimeFlg == false)
+            Poison.SetActive(false);
+            if (TimeFlg == false)
             {
                 Timekeep = Time.time;
                 TimeFlg = true;
             }
             
             i = 1;
-            Ball.GetComponent<Renderer>().material = _material[i];
-            SpeedDown.transform.position = Ball.transform.position;
+            this.GetComponent<Renderer>().material = _material[i];
+            SpeedDown.transform.position = transform.position;
 
 
-            Debug.Log(Time.time - Timekeep);
+            //Debug.Log(Flg);
+            //Debug.Log(Time.time - Timekeep);
 
             if (Time.time - Timekeep >= 2.0f)
             {
@@ -47,7 +49,7 @@ public class Ojama : MonoBehaviour
                 i = 0;
                 TimeFlg = false;
                 SpeedDown.SetActive(false);
-                Ball.GetComponent<Renderer>().material = _material[i];
+                this.GetComponent<Renderer>().material = _material[i];
             }
         }
         
@@ -56,7 +58,7 @@ public class Ojama : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Ball")
+        if (other.gameObject.tag == "Ojama")
         {
             Flg = true;
 
