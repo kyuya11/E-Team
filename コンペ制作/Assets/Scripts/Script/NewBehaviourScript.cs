@@ -11,6 +11,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     bool pushFlag = false;
     bool SEflag = false;
+    int StageNumber = 0;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         SEflag = Seselect.GetSEFlag();
+        StageNumber = StageSelect.StageNumber();
 
         if (SEflag == false)
         {
@@ -79,7 +81,14 @@ public class NewBehaviourScript : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1.5f);
 
-        SceneManager.LoadScene("SampleScene");
+        if (StageNumber == 0)
+        {
+            SceneManager.LoadScene("Stage1");
+        }
+        else if (StageNumber == 1)
+        {
+            SceneManager.LoadScene("Stage2");
+        }
         Time.timeScale = 1;
     }
     private IEnumerator TitleCoroutine()
