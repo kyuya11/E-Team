@@ -53,7 +53,7 @@ public class StageSelect : MonoBehaviour
         switch (MenuNumber)
         {
             case 0:
-                rect.localPosition = new Vector3(-120, 30, 0);
+                rect.localPosition = new Vector3(-550,80, 0);
                 if (Input.GetButton("A"))
                 {
                     StartCoroutine(RetryCoroutine());
@@ -61,7 +61,7 @@ public class StageSelect : MonoBehaviour
                 //Debug.Log("0");
                 break;
             case 1:
-                rect.localPosition = new Vector3(-120, -35, 0);
+                rect.localPosition = new Vector3(-550, 25, 0);
                 if (Input.GetButton("A"))
                 {
                     StartCoroutine(TitleCoroutine());
