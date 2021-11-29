@@ -18,12 +18,18 @@ public class BigBoll : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        Transform myTransform = this.transform;
+        Vector3 pos = myTransform.position;
         if (other.gameObject.tag == "speed")
         {
             kero.x = 4;
             kero.y = 4;
             kero.z = 4;
+            pos.x += 0;
+            pos.y += 2;
+            pos.z += 0;
             gameObject.transform.localScale = kero;
+            myTransform.position = pos ;
             StartCoroutine(SpeedCoroutine());
         }
 
