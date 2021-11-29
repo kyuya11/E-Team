@@ -7,7 +7,7 @@ public class Pause : MonoBehaviour
 {
     [SerializeField]
     GameObject pausePanel;
-    private static bool pushFlag = false;
+    bool pushFlag = false;
     bool getcountdown;
 
     private void Start()
@@ -47,10 +47,5 @@ public class Pause : MonoBehaviour
             }
             //Debug.Log(pushFlag);
         }
-    }
-
-    public static bool GetPushFlag()
-    {
-        return pushFlag;
     }
 }
