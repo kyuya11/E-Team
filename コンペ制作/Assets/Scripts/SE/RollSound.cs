@@ -9,6 +9,7 @@ public class RollSound : MonoBehaviour
     private float BallX;
     private float BallZ;
     bool SEFlg;
+    bool getpushFlag;
     public AudioClip BallSE;
     BallCamera cam;
 
@@ -27,24 +28,34 @@ public class RollSound : MonoBehaviour
 
 
         audio.volume = 1.0f;
-        SEFlg = false;
+        //SEFlg = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        getpushFlag = Pause.GetPushFlag();
+
         audio.volume = cam.vel / 7;
         //yield return new WaitForSeconds(1);
-        if (BallX != transform.position.x || BallZ != transform.position.z)
+        if (getpushFlag == false)
         {
-            if (SEFlg == false)
+            SEFlg = false;
+            if (BallX != transform.position.x || BallZ != transform.position.z)
             {
-                audio.time = 0.5f;
-                audio.Play();
-                SEFlg = true;
+                if (SEFlg == false)
+                {
+                    audio.loop = true;
+                    audio.time = 0.5f;
+                    audio.Play();
+                    //SEFlg = true;
+                }
             }
         }
-
+        else
+        {
+            SEFlg = true;
+        }
 
 
         //audio.volume = 0.5f;
