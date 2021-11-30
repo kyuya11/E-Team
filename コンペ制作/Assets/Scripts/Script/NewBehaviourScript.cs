@@ -68,7 +68,7 @@ public class NewBehaviourScript : MonoBehaviour
                 break;
             case 2:
                 rect.localPosition = new Vector3(-420, -200, 0);
-                if (Input.GetButton("A"))
+                if (Input.GetButton("A") || Input.GetButton("A") && Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical2") == 1)
                 {
                     StartCoroutine(EndCoroutine());
                 }
