@@ -25,7 +25,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (SEflag == false)
         {
-            if (Input.GetAxis("Vertical") == -1 || Input.GetAxis("Vertical2") == -1)
+            if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
             {
                 if (pushFlag == false)
                 {
@@ -33,7 +33,7 @@ public class NewBehaviourScript : MonoBehaviour
                     if (++MenuNumber > 2) MenuNumber = 0;
                 }
             }
-            else if (Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical2") == 1)
+            else if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == 1))
             {
                 if (pushFlag == false)
                 {
@@ -52,7 +52,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             case 0:
                 rect.localPosition = new Vector3(-420, 40, 0);
-                if (Input.GetButton("A"))
+                if (Input.GetButton("A") || (Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
                 {
                     StartCoroutine(RetryCoroutine());
                 }
@@ -60,7 +60,7 @@ public class NewBehaviourScript : MonoBehaviour
                 break;
             case 1:
                 rect.localPosition = new Vector3(-420, -80, 0);
-                if (Input.GetButton("A"))
+                if (Input.GetButton("A") || (Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
                 {
                     StartCoroutine(TitleCoroutine());
                 }
@@ -68,7 +68,7 @@ public class NewBehaviourScript : MonoBehaviour
                 break;
             case 2:
                 rect.localPosition = new Vector3(-420, -200, 0);
-                if (Input.GetButton("A") || Input.GetButton("A") && Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical2") == 1)
+                if (Input.GetButton("A") || (Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
                 {
                     StartCoroutine(EndCoroutine());
                 }
