@@ -30,6 +30,16 @@ public class RollSound : MonoBehaviour
         SEFlg = false;
     }
 
+    void Update()
+    {
+        if (Time.timeScale == 0)
+        {
+            //Debug.Log(Time.timeScale);
+            audio.Pause();
+            SEFlg = false;
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -39,16 +49,20 @@ public class RollSound : MonoBehaviour
         {
             if (SEFlg == false)
             {
-                audio.time = 0.5f;
+                //audio.time = 0.5f;
                 audio.Play();
                 SEFlg = true;
             }
         }
+        
+        //else
+        //{
+        //    audio.Play();
+        //}
 
 
-
-        //audio.volume = 0.5f;
-        BallX = transform.position.x;
+            //audio.volume = 0.5f;
+            BallX = transform.position.x;
         BallZ = transform.position.z;
         //Debug.Log("ボールが動いています");
     }
