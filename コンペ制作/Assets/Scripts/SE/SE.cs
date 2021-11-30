@@ -10,6 +10,7 @@ public class SE : MonoBehaviour
     public AudioClip ItemSE;
     public AudioClip ojamaSE;
     public AudioClip BigBollSE;
+    public AudioClip SmallBollSE;
 
     bool SEFlg = false;
 
@@ -59,11 +60,13 @@ public class SE : MonoBehaviour
         {
             var time = Time.time;
             audio.PlayOneShot(BigBollSE, 0.2f);
-            if (Time.time - time > 0.2f)
-            {
-                audio.Stop();
-            }
 
+            StartCoroutine(SmallCoroutine());
         }
+    }
+    private IEnumerator SmallCoroutine()
+    {
+        yield return new WaitForSeconds(4.5f);
+        audio.PlayOneShot(SmallBollSE, 0.2f);
     }
 }
