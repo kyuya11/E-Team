@@ -59,7 +59,7 @@ public class SE : MonoBehaviour
         if (other.gameObject.tag == "speed")    //当たった相手のTagがBallだったら
         {
             var time = Time.time;
-            audio.PlayOneShot(BigBollSE, 0.2f);
+            audio.PlayOneShot(BigBollSE, 0.15f);
 
             StartCoroutine(SmallCoroutine());
         }
@@ -67,6 +67,6 @@ public class SE : MonoBehaviour
     private IEnumerator SmallCoroutine()
     {
         yield return new WaitForSeconds(4.5f);
-        audio.PlayOneShot(SmallBollSE, 0.2f);
+        audio.PlayOneShot(SmallBollSE, 0.07f);
     }
 }

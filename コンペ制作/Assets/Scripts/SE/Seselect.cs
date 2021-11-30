@@ -21,7 +21,7 @@ public class Seselect : MonoBehaviour
     void Update()
     {
         if (getSEflag == false){  //falseの間操作可能
-            if (Input.GetAxis("Vertical") == -1 || Input.GetAxis("Vertical2") == -1)
+            if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
             {
                 if (getSE == false)
                 {
@@ -29,7 +29,7 @@ public class Seselect : MonoBehaviour
                     getSE = true;
                 }
             }
-            else if (Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical2") == 1)
+            else if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == 1))
             {
                 if (getSE == false)
                 {
@@ -37,7 +37,11 @@ public class Seselect : MonoBehaviour
                     getSE = true;
                 }
             }
-            else if (Input.GetButton("A"))
+            else
+            {
+                getSE = false;
+            }
+            if ((Input.GetAxis("Vertical") != 1 && Input.GetAxis("Vertical") != -1 && Input.GetAxis("Vertical2") != 1 && Input.GetAxis("Vertical2") != -1 && Input.GetButton("A")) || (Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
             {
                 if (getSE == false)
                 {
@@ -46,10 +50,7 @@ public class Seselect : MonoBehaviour
                     getSEflag = true;
                 }
             }
-            else
-            {
-                getSE = false;
-            }
+            
         }
     }
 
