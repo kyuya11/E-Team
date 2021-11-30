@@ -16,7 +16,7 @@ public class result : MonoBehaviour
         score = Item.GetItemCount();
         //Time = Timer.TimerCoroutine();
 
-        Counttext.text = string.Format("獲得したコイン  :  {0}/12", score);
+        Counttext.text = string.Format("獲得したコイン   :  {0}/12", score);
         //Timertext.text = string.Format("経過した時間  :  {0}", Time);
     }
 
