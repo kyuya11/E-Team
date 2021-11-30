@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class StageSelect : MonoBehaviour
 {
-    GameObject Subcam;
-    GameObject CamPos1;
-    GameObject CamPos2;
+    
+    GameObject StageIMG;
     public static int MenuNumber = 0;
     RectTransform rect;
 
@@ -17,10 +16,10 @@ public class StageSelect : MonoBehaviour
 
     void Start()
     {
-        Subcam = GameObject.Find("Camera2");
-        CamPos1 = GameObject.Find("Campos1");
-        CamPos2 = GameObject.Find("Campos2");
+        
         rect = GetComponent<RectTransform>();
+        StageIMG = GameObject.Find("StageIMG");
+        StageIMG.GetComponent<RawImage>().texture = Resources.Load<Texture2D>("Stage1");
     }
 
     void Update()
@@ -61,9 +60,10 @@ public class StageSelect : MonoBehaviour
         switch (MenuNumber)
         {
             case 0:
-                Subcam.transform.position = CamPos1.transform.position;
-                rect.localPosition = new Vector3(-384, -61, 0); 
                 
+                rect.localPosition = new Vector3(-384, -61, 0);
+                StageIMG.GetComponent<RawImage>().texture = Resources.Load<Texture2D>("Stage1");
+
                 if (Input.GetButton("A"))
                 {
                     StartCoroutine(RetryCoroutine());
@@ -71,8 +71,9 @@ public class StageSelect : MonoBehaviour
                 //Debug.Log("0");
                 break;
             case 1:
-                Subcam.transform.position = CamPos2.transform.position;
+                
                 rect.localPosition = new Vector3(-384, -115, 0);
+                StageIMG.GetComponent<RawImage>().texture = Resources.Load<Texture2D>("Stage2");
 
                 if (Input.GetButton("A"))
                 {
