@@ -20,8 +20,9 @@ public class Seselect : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(getSEflag);
         if (getSEflag == false){  //falseの間操作可能
-            if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
+            if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == -1)) //下が押された場合
             {
                 if (getSE == false)
                 {
@@ -29,7 +30,7 @@ public class Seselect : MonoBehaviour
                     getSE = true;
                 }
             }
-            else if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == 1))
+            else if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == 1))//上が押された場合
             {
                 if (getSE == false)
                 {
@@ -37,7 +38,7 @@ public class Seselect : MonoBehaviour
                     getSE = true;
                 }
             }
-            else
+            else //何も押されていないとき
             {
                 getSE = false;
             }
@@ -51,6 +52,11 @@ public class Seselect : MonoBehaviour
                 }
             }
             
+        }
+
+        if (getSEflag == true) //もしポーズ画面開いていないときにフラグがtrueならfalseになる
+        {
+            getSEflag = false;
         }
     }
 
