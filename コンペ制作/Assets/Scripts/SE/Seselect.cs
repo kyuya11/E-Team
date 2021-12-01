@@ -55,10 +55,7 @@ public class Seselect : MonoBehaviour
 
         }
 
-        if (getSEflag == true) //もしポーズ画面開いていないときにフラグがtrueならfalseになる
-        {
-            getSEflag = false;
-        }
+        
     }
 
     public static bool GetSEFlag()
