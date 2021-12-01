@@ -22,40 +22,40 @@ public class StageSelectSE : MonoBehaviour
     {
 
 
-            if (getSEflag == false)
+        if (getSEflag == false)
+        {
+            if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
             {
-                if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
+                if (getSE == false)
                 {
-                    if (getSE == false)
-                    {
-                        audioSource.PlayOneShot(sound1);
-                        getSE = true;
-                    }
+                    audioSource.PlayOneShot(sound1);
+                    getSE = true;
                 }
-                else if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == 1))
+            }
+            else if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == 1))
+            {
+                if (getSE == false)
                 {
-                    if (getSE == false)
-                    {
-                        audioSource.PlayOneShot(sound1);
-                        getSE = true;
-                    }
+                    audioSource.PlayOneShot(sound1);
+                    getSE = true;
                 }
+            }
             else
             {
                 getSE = false;
             }
             if ((Input.GetAxis("Vertical") != 1 && Input.GetAxis("Vertical") != -1 && Input.GetAxis("Vertical2") != 1 && Input.GetAxis("Vertical2") != -1 && Input.GetButton("A")) || (Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
+            {
+                if (getSE == false)
                 {
-                    if (getSE == false)
-                    {
-                        audioSource.PlayOneShot(sound2);
-                        getSE = true;
-                        getSEflag = true;
-                    }
+                    audioSource.PlayOneShot(sound2);
+                    getSE = true;
+                    getSEflag = true;
                 }
-                
             }
-        
+
+        }
+
     }
 
     public static bool GetResultSEFlag()

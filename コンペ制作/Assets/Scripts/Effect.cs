@@ -8,9 +8,20 @@ public class Effect : MonoBehaviour
     private ParticleSystem FootSmoke;
     private Rigidbody rb;
     private string answerTag = "floor";
+    private Transform ball;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        ball = GameObject.FindGameObjectWithTag("Ball").transform;
+    }
+
+    void Update()
+    {
+        if (ball.position.y < -10)
+        {
+            FootSmoke.Stop();
+        }
     }
 
     void OnCollisionStay(Collision other)
@@ -36,5 +47,9 @@ public class Effect : MonoBehaviour
                 }
             }
         }
+        //else
+        //{
+        //    FootSmoke.Stop();
+        //}
     }
 }
