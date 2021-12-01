@@ -55,7 +55,7 @@ public class menuselect : MonoBehaviour
         }
 
 
-        
+
         switch (MenuNumber)
         {
             case 0:
@@ -89,11 +89,15 @@ public class menuselect : MonoBehaviour
     private IEnumerator RetryCoroutine()
     {
         yield return new WaitForSecondsRealtime(1.5f);
-        if (StageNumber == 0) {
+        if (StageNumber == 0)
+        {
             SceneManager.LoadScene("Stage1");
-        } else if (StageNumber == 1) { 
+        }
+        else if (StageNumber == 1)
+        {
             SceneManager.LoadScene("Stage2");
-        } Time.timeScale = 1;
+        }
+        Time.timeScale = 1;
     }
     private IEnumerator TitleCoroutine()
     {
