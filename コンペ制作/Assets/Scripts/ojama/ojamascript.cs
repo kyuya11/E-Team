@@ -20,7 +20,13 @@ public class ojamascript : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag == "Ojama")
+        if (other.gameObject.tag == "Ojama1")
+        {
+            var time = Time.time;
+            rb.drag = 2;
+            StartCoroutine(Dragcoroutine());
+        }
+        if (other.gameObject.tag == "Ojama2")
         {
             var time = Time.time;
             rb.drag = 2;
