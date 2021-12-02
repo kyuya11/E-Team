@@ -9,7 +9,8 @@ public class SE : MonoBehaviour
     public AudioClip WallSE;
     public AudioClip ItemSE;
     public AudioClip ojamaSE;
-
+    public AudioClip BigBollSE;
+    public AudioClip SmallBollSE;
 
     bool SEFlg = false;
 
@@ -55,6 +56,17 @@ public class SE : MonoBehaviour
                 audio.Stop();
             }
         }
+        if (other.gameObject.tag == "speed")    //当たった相手のTagがBallだったら
+        {
+            var time = Time.time;
+            audio.PlayOneShot(BigBollSE, 0.15f);
 
+            StartCoroutine(SmallCoroutine());
+        }
+    }
+    private IEnumerator SmallCoroutine()
+    {
+        yield return new WaitForSeconds(4.5f);
+        audio.PlayOneShot(SmallBollSE, 0.07f);
     }
 }
