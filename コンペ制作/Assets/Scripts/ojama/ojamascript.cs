@@ -14,7 +14,7 @@ public class ojamascript : MonoBehaviour
     }
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -33,10 +33,11 @@ public class ojamascript : MonoBehaviour
             StartCoroutine(Dragcoroutine());
         }
     }
-    private IEnumerator Dragcoroutine() {
+    private IEnumerator Dragcoroutine()
+    {
         yield return new WaitForSeconds(2);
         rb.drag = 0;
     }
 
-    
+
 }

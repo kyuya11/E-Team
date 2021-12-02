@@ -21,7 +21,8 @@ public class Seselect : MonoBehaviour
     void Update()
     {
         Debug.Log(getSEflag);
-        if (getSEflag == false){  //falseの間操作可能
+        if (getSEflag == false)
+        {  //falseの間操作可能
             if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == -1)) //下が押された場合
             {
                 if (getSE == false)
@@ -51,7 +52,7 @@ public class Seselect : MonoBehaviour
                     getSEflag = true;
                 }
             }
-            
+
         }
 
         

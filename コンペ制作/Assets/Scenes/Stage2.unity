@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44647598, g: 0.49629962, b: 0.5747577, a: 1}
+  m_IndirectSpecularColor: {r: 0.44647622, g: 0.4963001, b: 0.57475835, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7597,7 +7597,6 @@ GameObject:
   - component: {fileID: 1133125485}
   - component: {fileID: 1133125483}
   - component: {fileID: 1133125486}
-  - component: {fileID: 1133125487}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -7734,10 +7733,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1133125476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08a05e45f87c40b4b84999a18623b72b, type: 3}
+  m_Script: {fileID: 11500000, guid: b9aed062b9968e24f8c764b8f9bf61da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  _material:
+  - {fileID: 2100000, guid: b7c013a55e57c0846b4a0fd31c091ac7, type: 2}
+  - {fileID: 2100000, guid: 0269ea925b691df42860e27b3bd5838e, type: 2}
 --- !u!114 &1133125485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7760,25 +7761,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1133125476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08a05e45f87c40b4b84999a18623b72b, type: 3}
+  m_Script: {fileID: 11500000, guid: 61fc687d8c5574e4593c018714081161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
---- !u!114 &1133125487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133125476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ba6720fba8a9d49beedfaa4aca587a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _material:
-  - {fileID: 2100000, guid: b7c013a55e57c0846b4a0fd31c091ac7, type: 2}
-  - {fileID: 2100000, guid: 0269ea925b691df42860e27b3bd5838e, type: 2}
 --- !u!4 &1135479734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7412205623989894792, guid: 53a99a2b8546c8d468f3dc8602ecf267,
@@ -8580,7 +8566,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1610590566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8323904f4e5475409ef5bbdd5b4966a, type: 3}
+  m_Script: {fileID: 11500000, guid: b29f1433538385a42bb7427bb558c067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sound1: {fileID: 8300000, guid: ced9e1355f7644f44a1a169ac7ec7daa, type: 3}
@@ -9810,9 +9796,8 @@ GameObject:
   - component: {fileID: 2025405074}
   - component: {fileID: 2025405073}
   - component: {fileID: 2025405072}
-  - component: {fileID: 2025405071}
-  - component: {fileID: 2025405077}
   - component: {fileID: 2025405076}
+  - component: {fileID: 2025405071}
   m_Layer: 0
   m_Name: Poison1
   m_TagString: Ojama1
@@ -9843,9 +9828,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2025405069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e484847cb596d2440b5b74aefea5a8ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 98c96256622371e4a8eb87dda3bba8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 8316594418956405620, guid: cf6d2df60dfd3c443b5e70124b5e3048,
+    type: 3}
 --- !u!114 &2025405072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9931,21 +9918,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd69fc85ec849d4dbdee9a399c3b0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2025405077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2025405069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ba6720fba8a9d49beedfaa4aca587a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _material:
-  - {fileID: 2100000, guid: b7c013a55e57c0846b4a0fd31c091ac7, type: 2}
-  - {fileID: 2100000, guid: 0269ea925b691df42860e27b3bd5838e, type: 2}
 --- !u!1 &2076309349
 GameObject:
   m_ObjectHideFlags: 0
@@ -9989,9 +9961,8 @@ GameObject:
   - component: {fileID: 2145505410}
   - component: {fileID: 2145505409}
   - component: {fileID: 2145505408}
-  - component: {fileID: 2145505407}
-  - component: {fileID: 2145505413}
   - component: {fileID: 2145505412}
+  - component: {fileID: 2145505407}
   m_Layer: 0
   m_Name: Poison2
   m_TagString: Ojama2
@@ -10022,9 +9993,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2145505405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e484847cb596d2440b5b74aefea5a8ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 98c96256622371e4a8eb87dda3bba8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 8316594418956405620, guid: cf6d2df60dfd3c443b5e70124b5e3048,
+    type: 3}
 --- !u!114 &2145505408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10110,18 +10083,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd69fc85ec849d4dbdee9a399c3b0a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2145505413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145505405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ba6720fba8a9d49beedfaa4aca587a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _material:
-  - {fileID: 2100000, guid: b7c013a55e57c0846b4a0fd31c091ac7, type: 2}
-  - {fileID: 2100000, guid: 0269ea925b691df42860e27b3bd5838e, type: 2}

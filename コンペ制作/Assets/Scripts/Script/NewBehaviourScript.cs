@@ -31,7 +31,7 @@ public class NewBehaviourScript : MonoBehaviour
                 if (pushFlag == false)
                 {
                     pushFlag = true;
-                    if (++MenuNumber > 2) MenuNumber = 0;
+                    if (++MenuNumber > 2) MenuNumber = 0;   //ポーズメニューのカーソルが一番下から一番上にくるように
                 }
             }
             else if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == 1))
@@ -39,7 +39,7 @@ public class NewBehaviourScript : MonoBehaviour
                 if (pushFlag == false)
                 {
                     pushFlag = true;
-                    if (--MenuNumber < 0) MenuNumber = 2;
+                    if (--MenuNumber < 0) MenuNumber = 2;    //ポーズメニューのカーソルが一番上から一番下にくるように
 
                 }
             }
