@@ -10,7 +10,7 @@ public class Ojamakaiten : MonoBehaviour
         
     }
 
-    //Update is called once per frame
+    // Update is called once per frame
     void FixedUpdate()
     {
         transform.Rotate(new Vector3(0, -2.5f, 0));
