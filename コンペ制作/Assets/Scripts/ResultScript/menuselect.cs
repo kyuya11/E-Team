@@ -92,10 +92,12 @@ public class menuselect : MonoBehaviour
         if (StageNumber == 0)
         {
             SceneManager.LoadScene("Stage1");
+            MenuNumber = 0;
         }
         else if (StageNumber == 1)
         {
             SceneManager.LoadScene("Stage2");
+            MenuNumber = 0;
         }
         Time.timeScale = 1;
     }
@@ -104,6 +106,7 @@ public class menuselect : MonoBehaviour
         yield return new WaitForSecondsRealtime(1.5f);
 
         SceneManager.LoadScene("Title");
+        MenuNumber = 0;
         Time.timeScale = 1;
     }
     private IEnumerator EndCoroutine()

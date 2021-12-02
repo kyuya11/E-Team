@@ -7775,6 +7775,7 @@ GameObject:
   - component: {fileID: 1309927824}
   - component: {fileID: 1309927823}
   - component: {fileID: 1309927827}
+  - component: {fileID: 1309927828}
   m_Layer: 0
   m_Name: Poison1
   m_TagString: Ojama1
@@ -7871,6 +7872,18 @@ MonoBehaviour:
   _material:
   - {fileID: 2100000, guid: b7c013a55e57c0846b4a0fd31c091ac7, type: 2}
   - {fileID: 2100000, guid: 0269ea925b691df42860e27b3bd5838e, type: 2}
+--- !u!114 &1309927828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309927822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd69fc85ec849d4dbdee9a399c3b0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1323184311
 GameObject:
   m_ObjectHideFlags: 0

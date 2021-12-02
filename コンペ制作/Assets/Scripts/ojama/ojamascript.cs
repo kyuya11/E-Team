@@ -24,19 +24,24 @@ public class ojamascript : MonoBehaviour
         {
             var time = Time.time;
             rb.drag = 2;
-            StartCoroutine(Dragcoroutine());
+            StartCoroutine(Dragcoroutine1());
         }
         if (other.gameObject.tag == "Ojama2")
         {
             var time = Time.time;
             rb.drag = 2;
-            StartCoroutine(Dragcoroutine());
+            StartCoroutine(Dragcoroutine2());
         }
     }
-    private IEnumerator Dragcoroutine() {
+    private IEnumerator Dragcoroutine1() {
+        yield return new WaitForSeconds(2);
+        rb.drag = 0;
+    }
+    private IEnumerator Dragcoroutine2()
+    {
         yield return new WaitForSeconds(2);
         rb.drag = 0;
     }
 
-    
+
 }

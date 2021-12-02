@@ -89,11 +89,13 @@ public class NewBehaviourScript : MonoBehaviour
         {
             SceneManager.LoadScene("Stage1");
             pushScene = false;
+            MenuNumber = 0;
         }
         else if (StageNumber == 1)
         {
             SceneManager.LoadScene("Stage2");
             pushScene = false;
+            MenuNumber = 0;
         }
         Time.timeScale = 1;
     }
@@ -104,6 +106,7 @@ public class NewBehaviourScript : MonoBehaviour
         SceneManager.LoadScene("Title");
         pushScene = false;
         Time.timeScale = 1;
+        MenuNumber = 0;
     }
     private IEnumerator EndCoroutine()
     {
