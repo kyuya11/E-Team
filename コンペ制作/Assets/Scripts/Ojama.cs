@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ojama : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Ojama : MonoBehaviour
     bool Flg2;
     bool TimeFlg; //Timekeep専用
     private float Timekeep;
+    private int StageNumber = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,7 @@ public class Ojama : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StageNumber = StageSelect.StageNumber();
 
         if (Flg1 == true || Flg2 == true)
         {
@@ -83,15 +86,19 @@ public class Ojama : MonoBehaviour
                     SpeedDown1.SetActive(false);
                     this.GetComponent<Renderer>().material = _material[i];
                 }
-                if (Poison2.activeSelf)
+                if(StageNumber != 0)
                 {
+                    if (Poison2.activeSelf)
+                    {
+                    }
+                    else
+                    {
+                        SpeedDown2.SetActive(false);
+                        this.GetComponent<Renderer>().material = _material[i];
+                    }
                 }
-                else
-                {
-                    SpeedDown2.SetActive(false);
-                    this.GetComponent<Renderer>().material = _material[i];
-                }
-                //this.GetComponent<Renderer>().material = _material[i];
+                
+                this.GetComponent<Renderer>().material = _material[i];
             }
         }
         
