@@ -7672,10 +7672,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1133125476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08a05e45f87c40b4b84999a18623b72b, type: 3}
+  m_Script: {fileID: 11500000, guid: af4362f0a223d454f92c701a5b2d3d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  WallSE: {fileID: 8300000, guid: 9b6667db8b6fc43308a85a8285699b94, type: 3}
+  ItemSE: {fileID: 8300000, guid: 139393c15b386554e951588e7fa3c0a9, type: 3}
+  ojamaSE: {fileID: 8300000, guid: 6cde3ff8bbc74ef44a5a56a67989d44c, type: 3}
+  BigBollSE: {fileID: 8300000, guid: 655c29c9b383d0e44951089a923ed47d, type: 3}
+  SmallBollSE: {fileID: 8300000, guid: b71476b947b5f1e4085486fdfbe3eb8b, type: 3}
 --- !u!114 &1133125487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7685,7 +7689,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1133125476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ba6720fba8a9d49beedfaa4aca587a, type: 3}
+  m_Script: {fileID: 11500000, guid: b9aed062b9968e24f8c764b8f9bf61da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _material:
@@ -7866,12 +7870,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1309927822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ba6720fba8a9d49beedfaa4aca587a, type: 3}
+  m_Script: {fileID: 11500000, guid: 98c96256622371e4a8eb87dda3bba8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _material:
-  - {fileID: 2100000, guid: b7c013a55e57c0846b4a0fd31c091ac7, type: 2}
-  - {fileID: 2100000, guid: 0269ea925b691df42860e27b3bd5838e, type: 2}
+  particle: {fileID: 8316594418956405620, guid: cf6d2df60dfd3c443b5e70124b5e3048,
+    type: 3}
 --- !u!114 &1309927828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8553,7 +8556,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1610590566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8323904f4e5475409ef5bbdd5b4966a, type: 3}
+  m_Script: {fileID: 11500000, guid: b29f1433538385a42bb7427bb558c067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sound1: {fileID: 8300000, guid: ced9e1355f7644f44a1a169ac7ec7daa, type: 3}

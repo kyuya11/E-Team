@@ -7743,9 +7743,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1133125476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08a05e45f87c40b4b84999a18623b72b, type: 3}
+  m_Script: {fileID: 11500000, guid: b9aed062b9968e24f8c764b8f9bf61da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _material:
+  - {fileID: 2100000, guid: b7c013a55e57c0846b4a0fd31c091ac7, type: 2}
+  - {fileID: 2100000, guid: 0269ea925b691df42860e27b3bd5838e, type: 2}
 --- !u!114 &1133125485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7770,9 +7773,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1133125476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ba6720fba8a9d49beedfaa4aca587a, type: 3}
+  m_Script: {fileID: 11500000, guid: 61fc687d8c5574e4593c018714081161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!114 &1133125488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8672,9 +8676,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1610590566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8323904f4e5475409ef5bbdd5b4966a, type: 3}
+  m_Script: {fileID: 11500000, guid: b29f1433538385a42bb7427bb558c067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound1: {fileID: 8300000, guid: ced9e1355f7644f44a1a169ac7ec7daa, type: 3}
+  sound2: {fileID: 8300000, guid: da74d83867b40b24eb48810b3320dfa7, type: 3}
 --- !u!82 &1610590571
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9990,9 +9996,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2025405069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ba6720fba8a9d49beedfaa4aca587a, type: 3}
+  m_Script: {fileID: 11500000, guid: 98c96256622371e4a8eb87dda3bba8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 8316594418956405620, guid: cf6d2df60dfd3c443b5e70124b5e3048,
+    type: 3}
 --- !u!1 &2076309349
 GameObject:
   m_ObjectHideFlags: 0
@@ -10126,9 +10134,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2145505405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ba6720fba8a9d49beedfaa4aca587a, type: 3}
+  m_Script: {fileID: 11500000, guid: 98c96256622371e4a8eb87dda3bba8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 8316594418956405620, guid: cf6d2df60dfd3c443b5e70124b5e3048,
+    type: 3}
 --- !u!1001 &1479180049846708357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10140,6 +10150,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479180050929498089, guid: a364847b1e5386c40a27318dcd0b2466,
+        type: 3}
+      propertyPath: _material.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1479180050929498092, guid: a364847b1e5386c40a27318dcd0b2466,
         type: 3}
