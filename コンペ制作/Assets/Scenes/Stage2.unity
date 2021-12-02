@@ -7346,7 +7346,6 @@ GameObject:
   - component: {fileID: 1133125479}
   - component: {fileID: 1133125478}
   - component: {fileID: 1133125482}
-  - component: {fileID: 1133125483}
   - component: {fileID: 1133125477}
   - component: {fileID: 1133125484}
   m_Layer: 0
@@ -7459,20 +7458,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FootSmoke: {fileID: 977744369}
---- !u!114 &1133125483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133125476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc410a9f15c6c0448b3f4594c1542192, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WallSE: {fileID: 8300000, guid: 9b6667db8b6fc43308a85a8285699b94, type: 3}
-  ItemSE: {fileID: 8300000, guid: 139393c15b386554e951588e7fa3c0a9, type: 3}
 --- !u!114 &1133125484
 MonoBehaviour:
   m_ObjectHideFlags: 0
