@@ -50,7 +50,7 @@ public class Ojama : MonoBehaviour
                 Timekeep = Time.time;
                 TimeFlg = true;
             }
-            
+
             i = 1;
             this.GetComponent<Renderer>().material = _material[i];
             if (Flg1 == true)
@@ -71,11 +71,11 @@ public class Ojama : MonoBehaviour
                 {
                     Flg1 = false;
                 }
-                if(Flg2 == true)
+                if (Flg2 == true)
                 {
                     Flg2 = false;
                 }
-                
+
                 i = 0;
                 TimeFlg = false;
                 if (Poison1.activeSelf)
@@ -86,7 +86,10 @@ public class Ojama : MonoBehaviour
                     SpeedDown1.SetActive(false);
                     this.GetComponent<Renderer>().material = _material[i];
                 }
-                if(StageNumber != 0)
+
+
+
+                if (StageNumber == 1)
                 {
                     if (Poison2.activeSelf)
                     {
@@ -97,11 +100,11 @@ public class Ojama : MonoBehaviour
                         this.GetComponent<Renderer>().material = _material[i];
                     }
                 }
-                
+
                 this.GetComponent<Renderer>().material = _material[i];
             }
         }
-        
+
 
     }
 
