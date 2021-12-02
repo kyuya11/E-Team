@@ -59,7 +59,7 @@ public class menuselect : MonoBehaviour
         switch (MenuNumber)
         {
             case 0:
-                rect.localPosition = new Vector3(-204, -96, 0);
+                rect.localPosition = new Vector3(-204, -101, 0);
                 if (Input.GetButton("A"))
                 {
                     StartCoroutine(RetryCoroutine());
@@ -67,7 +67,7 @@ public class menuselect : MonoBehaviour
                 //Debug.Log("0");
                 break;
             case 1:
-                rect.localPosition = new Vector3(-268, -161, 0);
+                rect.localPosition = new Vector3(-273, -171, 0);
                 if (Input.GetButton("A"))
                 {
                     StartCoroutine(TitleCoroutine());
@@ -76,7 +76,7 @@ public class menuselect : MonoBehaviour
                 //Debug.Log("1");
                 break;
             case 2:
-                rect.localPosition = new Vector3(-301, -235, 0);
+                rect.localPosition = new Vector3(-311, -240, 0);
                 if (Input.GetButton("A"))
                 {
                     StartCoroutine(EndCoroutine());
