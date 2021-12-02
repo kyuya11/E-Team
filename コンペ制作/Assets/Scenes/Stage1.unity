@@ -2046,7 +2046,7 @@ GameObject:
   - component: {fileID: 752471764}
   m_Layer: 0
   m_Name: Ojama
-  m_TagString: Ojama
+  m_TagString: Ojama1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7776,8 +7776,8 @@ GameObject:
   - component: {fileID: 1309927823}
   - component: {fileID: 1309927827}
   m_Layer: 0
-  m_Name: Poison
-  m_TagString: Ojama
+  m_Name: Poison1
+  m_TagString: Ojama1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9438,7 +9438,7 @@ PrefabInstance:
     - target: {fileID: 7412205623989894795, guid: 53a99a2b8546c8d468f3dc8602ecf267,
         type: 3}
       propertyPath: m_Name
-      value: PoisonSmoke
+      value: PoisonSmoke1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53a99a2b8546c8d468f3dc8602ecf267, type: 3}
