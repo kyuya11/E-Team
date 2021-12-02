@@ -22,7 +22,7 @@ public class DownOjama : MonoBehaviour
     {
         if (other.gameObject.tag == "floor")
         {
-            rb.isKinematic = true;
+            //rb.isKinematic = true;
             m_ObjectCollider.isTrigger = true;
         }
     }
