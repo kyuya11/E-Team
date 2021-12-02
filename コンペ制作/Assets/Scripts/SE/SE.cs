@@ -56,6 +56,26 @@ public class SE : MonoBehaviour
                 audio.Stop();
             }
         }
+        if (other.gameObject.tag == "Ojama1")
+        {
+            //Debug.Log("お邪魔アイテムを取得しました");
+            var time = Time.time;
+            audio.PlayOneShot(ojamaSE, 0.2f);
+            if (Time.time - time > 0.2f)
+            {
+                audio.Stop();
+            }
+        }
+        if (other.gameObject.tag == "Ojama2")
+        {
+            //Debug.Log("お邪魔アイテムを取得しました");
+            var time = Time.time;
+            audio.PlayOneShot(ojamaSE, 0.2f);
+            if (Time.time - time > 0.2f)
+            {
+                audio.Stop();
+            }
+        }
         if (other.gameObject.tag == "speed")    //当たった相手のTagがBallだったら
         {
             var time = Time.time;
