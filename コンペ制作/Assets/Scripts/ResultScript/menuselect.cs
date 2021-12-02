@@ -76,7 +76,7 @@ public class menuselect : MonoBehaviour
                 //Debug.Log("1");
                 break;
             case 2:
-                rect.localPosition = new Vector3(-291, -235, 0);
+                rect.localPosition = new Vector3(-301, -235, 0);
                 if (Input.GetButton("A"))
                 {
                     StartCoroutine(EndCoroutine());
