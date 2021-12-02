@@ -81,6 +81,7 @@ public class Ojama : MonoBehaviour
                 else
                 {
                     SpeedDown1.SetActive(false);
+                    this.GetComponent<Renderer>().material = _material[i];
                 }
                 if (Poison2.activeSelf)
                 {
@@ -88,8 +89,9 @@ public class Ojama : MonoBehaviour
                 else
                 {
                     SpeedDown2.SetActive(false);
+                    this.GetComponent<Renderer>().material = _material[i];
                 }
-                this.GetComponent<Renderer>().material = _material[i];
+                //this.GetComponent<Renderer>().material = _material[i];
             }
         }
         
