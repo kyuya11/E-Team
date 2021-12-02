@@ -11,6 +11,8 @@ TagManager:
   - FxTemporaire
   - Ojama
   - speed
+  - Ojama1
+  - Ojama2
   layers:
   - Default
   - TransparentFX

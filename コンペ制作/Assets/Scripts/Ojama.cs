@@ -6,9 +6,12 @@ public class Ojama : MonoBehaviour
 {
     public Material[] _material;
     private int i; //配列の要素番号
-    GameObject SpeedDown;
-    GameObject Poison;
-    bool Flg;
+    GameObject SpeedDown1;
+    GameObject SpeedDown2;
+    GameObject Poison1;
+    GameObject Poison2;
+    bool Flg1;
+    bool Flg2;
     bool TimeFlg; //Timekeep専用
     private float Timekeep;
 
@@ -16,19 +19,29 @@ public class Ojama : MonoBehaviour
     void Start()
     {
         i = 0;
-        Flg = false;
+        Flg1 = false;
+        Flg2 = false;
         Timekeep = 0.0f;
-        SpeedDown = GameObject.Find("PoisonSmoke");
-        Poison = GameObject.Find("Poison");
+        SpeedDown1 = GameObject.Find("PoisonSmoke1");
+        SpeedDown2 = GameObject.Find("PoisonSmoke2");
+        Poison1 = GameObject.Find("Poison1");
+        Poison2 = GameObject.Find("Poison2");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (Flg == true)
+
+        if (Flg1 == true || Flg2 == true)
         {
-            Poison.SetActive(false);
+            if (Flg1 == true)
+            {
+                Poison1.SetActive(false);
+            }
+            if (Flg2 == true)
+            {
+                Poison2.SetActive(false);
+            }
             if (TimeFlg == false)
             {
                 Timekeep = Time.time;
@@ -37,18 +50,45 @@ public class Ojama : MonoBehaviour
             
             i = 1;
             this.GetComponent<Renderer>().material = _material[i];
-            SpeedDown.transform.position = transform.position;
-
+            if (Flg1 == true)
+            {
+                SpeedDown1.transform.position = transform.position;
+            }
+            if (Flg2 == true)
+            {
+                SpeedDown2.transform.position = transform.position;
+            }
 
             //Debug.Log(Flg);
             //Debug.Log(Time.time - Timekeep);
 
             if (Time.time - Timekeep >= 2.0f)
             {
-                Flg = false;
+                if (Flg1 == true)
+                {
+                    Flg1 = false;
+                }
+                if(Flg2 == true)
+                {
+                    Flg2 = false;
+                }
+                
                 i = 0;
                 TimeFlg = false;
-                SpeedDown.SetActive(false);
+                if (Poison1.activeSelf)
+                {
+                }
+                else
+                {
+                    SpeedDown1.SetActive(false);
+                }
+                if (Poison2.activeSelf)
+                {
+                }
+                else
+                {
+                    SpeedDown2.SetActive(false);
+                }
                 this.GetComponent<Renderer>().material = _material[i];
             }
         }
@@ -58,9 +98,14 @@ public class Ojama : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Ojama")
+        if (other.gameObject.tag == "Ojama1")
         {
-            Flg = true;
+            Flg1 = true;
+
+        }
+        if (other.gameObject.tag == "Ojama2")
+        {
+            Flg2 = true;
 
         }
     }
