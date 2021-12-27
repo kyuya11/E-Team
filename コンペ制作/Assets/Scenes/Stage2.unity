@@ -9906,7 +9906,6 @@ GameObject:
   - component: {fileID: 2025405074}
   - component: {fileID: 2025405073}
   - component: {fileID: 2025405077}
-  - component: {fileID: 2025405071}
   m_Layer: 0
   m_Name: Poison1
   m_TagString: Ojama1
@@ -9928,18 +9927,6 @@ Transform:
   m_Father: {fileID: 254003114}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2025405071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2025405069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfd69fc85ec849d4dbdee9a399c3b0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &2025405073
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10056,8 +10043,7 @@ GameObject:
   - component: {fileID: 2145505411}
   - component: {fileID: 2145505410}
   - component: {fileID: 2145505409}
-  - component: {fileID: 2145505407}
-  - component: {fileID: 2145505408}
+  - component: {fileID: 2145505413}
   m_Layer: 0
   m_Name: Poison2
   m_TagString: Ojama2
@@ -10079,32 +10065,6 @@ Transform:
   m_Father: {fileID: 1034658392}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2145505407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145505405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98c96256622371e4a8eb87dda3bba8b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particle: {fileID: 8316594418956405620, guid: cf6d2df60dfd3c443b5e70124b5e3048,
-    type: 3}
---- !u!114 &2145505408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145505405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfd69fc85ec849d4dbdee9a399c3b0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &2145505409
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10165,6 +10125,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145505405}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2145505413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145505405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c96256622371e4a8eb87dda3bba8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 8316594418956405620, guid: cf6d2df60dfd3c443b5e70124b5e3048,
+    type: 3}
 --- !u!1001 &1479180049846708357
 PrefabInstance:
   m_ObjectHideFlags: 0
