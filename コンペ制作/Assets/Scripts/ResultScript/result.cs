@@ -10,6 +10,7 @@ public class result : MonoBehaviour
     //public Text Timertext;
     int score;
     //int Time;
+
     // Start is called before the first frame update
     void Start()
     {
