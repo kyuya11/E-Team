@@ -88,7 +88,9 @@ public class menuselect : MonoBehaviour
     }
     private IEnumerator RetryCoroutine()
     {
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSecondsRealtime(1.5f);  //1.5秒待った後にシーンをロード
+
+        //StageNumber変数に入っている数字でロードするシーンを決める
         if (StageNumber == 0)
         {
             SceneManager.LoadScene("Stage1");
@@ -99,8 +101,20 @@ public class menuselect : MonoBehaviour
             SceneManager.LoadScene("Stage2");
             MenuNumber = 0;
         }
+        else if (StageNumber == 2)
+        {
+            SceneManager.LoadScene("Stage3");
+            MenuNumber = 0;
+        }
+        else if (StageNumber == 3)
+        {
+            SceneManager.LoadScene("Stage4");
+            MenuNumber = 0;
+        }
         Time.timeScale = 1;
     }
+
+
     private IEnumerator TitleCoroutine()
     {
         yield return new WaitForSecondsRealtime(1.5f);
@@ -109,6 +123,8 @@ public class menuselect : MonoBehaviour
         MenuNumber = 0;
         Time.timeScale = 1;
     }
+
+
     private IEnumerator EndCoroutine()
     {
         yield return new WaitForSecondsRealtime(1.5f);

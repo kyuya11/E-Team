@@ -81,7 +81,10 @@ public class NewBehaviourScript : MonoBehaviour
 
         }
     }
-    private IEnumerator RetryCoroutine()
+
+
+
+    private IEnumerator RetryCoroutine()    //StageNumberによってロードシーンを管理
     {
         yield return new WaitForSecondsRealtime(1.5f);
 
@@ -97,8 +100,21 @@ public class NewBehaviourScript : MonoBehaviour
             pushScene = false;
             MenuNumber = 0;
         }
+        else if (StageNumber == 2)
+        {
+            SceneManager.LoadScene("Stage3");
+            pushScene = false;
+            MenuNumber = 0;
+        }
+        else if (StageNumber == 3)
+        {
+            SceneManager.LoadScene("Stage4");
+            pushScene = false;
+            MenuNumber = 0;
+        }
         Time.timeScale = 1;
     }
+
     private IEnumerator TitleCoroutine()
     {
         yield return new WaitForSecondsRealtime(1.5f);
@@ -108,12 +124,15 @@ public class NewBehaviourScript : MonoBehaviour
         Time.timeScale = 1;
         MenuNumber = 0;
     }
+
     private IEnumerator EndCoroutine()
     {
         yield return new WaitForSecondsRealtime(1.5f);
         Application.Quit();
 
     }
+
+
     public static bool PushLoadScene()
     {
         return pushScene;
