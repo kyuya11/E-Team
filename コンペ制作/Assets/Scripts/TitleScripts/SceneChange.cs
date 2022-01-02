@@ -16,7 +16,15 @@ public class SceneChange : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            SceneManager.LoadScene("StageSelect");
+            StartCoroutine(ChangeCoroutine());
         }
+    }
+
+    private IEnumerator ChangeCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);  //1.5秒待った後にシーンをロード
+
+        SceneManager.LoadScene("StageSelect");
+        Time.timeScale = 1;
     }
 }
