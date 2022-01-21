@@ -27,7 +27,7 @@ public class ResultSE : MonoBehaviour
         {
             if (getSEflag == false)
             {
-                if (Input.GetAxis("Vertical") == -1 || Input.GetAxis("Vertical2") == -1)
+                if ((!Input.GetButton("A")&&Input.GetAxis("Vertical") == -1 ) || (!Input.GetButton("A")&& Input.GetAxis("Vertical2") == -1))
                 {
                     if (getSE == false)
                     {
@@ -35,27 +35,30 @@ public class ResultSE : MonoBehaviour
                         getSE = true;
                     }
                 }
-                else if (Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical2") == 1)
+                else if ((!Input.GetButton("A")&& Input.GetAxis("Vertical") == 1)  ||(!Input.GetButton("A")&& Input.GetAxis("Vertical2") == 1))
                 {
                     if (getSE == false)
                     {
                         audioSource.PlayOneShot(sound1);
                         getSE = true;
-                    }
-                }
-                else if (Input.GetButton("A"))
-                {
-                    if (getSE == false)
-                    {
-                        audioSource.PlayOneShot(sound2);
-                        getSE = true;
-                        getSEflag = true;
                     }
                 }
                 else
                 {
                     getSE = false;
                 }
+                if ((Input.GetAxis("Vertical") != 1&& Input.GetAxis("Vertical") != -1&& Input.GetAxis("Vertical2") != 1&& Input.GetAxis("Vertical2") != -1&&Input.GetButton("A"))|| (Input.GetButton("A")&& Input.GetAxis("Vertical") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == 1)|| (Input.GetButton("A") && Input.GetAxis("Vertical") == -1) ||(Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
+                {
+                    
+                        if (getSE == false)
+                        {
+                            audioSource.PlayOneShot(sound2);
+                            getSE = true;
+                            getSEflag = true;
+                        }
+                    
+                }
+                
             }
         }
     }

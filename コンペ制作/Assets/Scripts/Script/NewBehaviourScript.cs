@@ -11,6 +11,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     bool pushFlag = false;
     bool SEflag = false;
+    private static bool pushScene = false;
     int StageNumber = 0;
 
     void Start()
@@ -25,7 +26,7 @@ public class NewBehaviourScript : MonoBehaviour
 
         if (SEflag == false)
         {
-            if (Input.GetAxis("Vertical") == -1 || Input.GetAxis("Vertical2") == -1)
+            if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
             {
                 if (pushFlag == false)
                 {
@@ -33,7 +34,7 @@ public class NewBehaviourScript : MonoBehaviour
                     if (++MenuNumber > 2) MenuNumber = 0;
                 }
             }
-            else if (Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical2") == 1)
+            else if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == 1))
             {
                 if (pushFlag == false)
                 {
@@ -52,24 +53,27 @@ public class NewBehaviourScript : MonoBehaviour
         {
             case 0:
                 rect.localPosition = new Vector3(-420, 40, 0);
-                if (Input.GetButton("A"))
+                if (Input.GetButton("A") || (Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
                 {
+                    pushScene = true;
                     StartCoroutine(RetryCoroutine());
                 }
                 //Debug.Log("0");
                 break;
             case 1:
                 rect.localPosition = new Vector3(-420, -80, 0);
-                if (Input.GetButton("A"))
+                if (Input.GetButton("A") || (Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
                 {
+                    pushScene = true;
                     StartCoroutine(TitleCoroutine());
                 }
                 //Debug.Log("1");
                 break;
             case 2:
                 rect.localPosition = new Vector3(-420, -200, 0);
-                if (Input.GetButton("A"))
+                if (Input.GetButton("A") || (Input.GetButton("A") && Input.GetAxis("Vertical") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == 1) || (Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (Input.GetButton("A") && Input.GetAxis("Vertical2") == -1))
                 {
+                    pushScene = true;
                     StartCoroutine(EndCoroutine());
                 }
                 //Debug.Log("2");
@@ -84,10 +88,12 @@ public class NewBehaviourScript : MonoBehaviour
         if (StageNumber == 0)
         {
             SceneManager.LoadScene("Stage1");
+            pushScene = false;
         }
         else if (StageNumber == 1)
         {
             SceneManager.LoadScene("Stage2");
+            pushScene = false;
         }
         Time.timeScale = 1;
     }
@@ -96,6 +102,7 @@ public class NewBehaviourScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(1.5f);
 
         SceneManager.LoadScene("Title");
+        pushScene = false;
         Time.timeScale = 1;
     }
     private IEnumerator EndCoroutine()
@@ -103,5 +110,9 @@ public class NewBehaviourScript : MonoBehaviour
         yield return new WaitForSecondsRealtime(1.5f);
         Application.Quit();
 
+    }
+    public static bool PushLoadScene()
+    {
+        return pushScene;
     }
 }

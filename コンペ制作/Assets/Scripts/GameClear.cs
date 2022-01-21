@@ -10,6 +10,7 @@ public class GameClear : MonoBehaviour
     int resultItemCount;
     float next = 0;
     bool flg = false;
+    private static bool GameClearFlag = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,14 +39,24 @@ public class GameClear : MonoBehaviour
             clearText.enabled = true;
             if (flg == false)
             {
+                GameClearFlag = true;
                 next = Time.unscaledTime;
                 flg = true;
             }
+            
 
             Time.timeScale = 0f;
 
             
         }
+        else
+        {
+            flg = false;
+            GameClearFlag = false;
+        }
     }
-
+    public static bool ClearText()
+    {
+        return GameClearFlag;
+    }
 }

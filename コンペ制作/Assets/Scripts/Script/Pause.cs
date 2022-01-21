@@ -9,6 +9,8 @@ public class Pause : MonoBehaviour
     GameObject pausePanel;
     bool pushFlag = false;
     bool getcountdown;
+    bool pushscene;
+    bool GameClearflg;
 
     private void Start()
     {
@@ -18,34 +20,47 @@ public class Pause : MonoBehaviour
     void Update()
     {
         getcountdown = StartCount.CountDownStart();
+        pushscene = NewBehaviourScript.PushLoadScene();
+        GameClearflg = GameClear.ClearText();
 
-        if (getcountdown == false)
+
+        if (GameClearflg == false)
         {
-            if (Input.GetKeyDown(KeyCode.P) || Input.GetButton("Start"))
+            if (getcountdown == false)
             {
-
-                if (pushFlag == false)
+                if (pushscene == false)
                 {
-                    pushFlag = true;
-                    if (Time.timeScale == 1)
+                    if (Input.GetKeyDown(KeyCode.P) || Input.GetButton("Start"))
                     {
-                        Time.timeScale = 0;
-                        pausePanel.SetActive(true);
+
+                        if (pushFlag == false)
+                        {
+                            pushFlag = true;
+                            if (Time.timeScale == 1)
+                            {
+                                Time.timeScale = 0;
+                                pausePanel.SetActive(true);
+                            }
+                            else
+                            {
+                                pushFlag = true;
+                                Time.timeScale = 1;
+                                pausePanel.SetActive(false);
+                            }
+                        }
+
                     }
                     else
                     {
-                        pushFlag = true;
-                        Time.timeScale = 1;
-                        pausePanel.SetActive(false);
+                        pushFlag = false;
                     }
+                    //Debug.Log(pushFlag);
                 }
-
             }
-            else
-            {
-                pushFlag = false;
-            }
-            //Debug.Log(pushFlag);
+        }
+        else
+        {
+            GameClearflg = false;
         }
     }
 }
