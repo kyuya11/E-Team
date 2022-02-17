@@ -48,7 +48,10 @@ public class Pause : MonoBehaviour
                                 pausePanel.SetActive(false);
                             }
                         }
-
+                        else
+                        {
+                            pushFlag = false;
+                        }
                     }
                     else
                     {

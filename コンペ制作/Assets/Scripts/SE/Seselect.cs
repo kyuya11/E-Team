@@ -16,18 +16,18 @@ public class Seselect : MonoBehaviour
         //Componentを取得
         audioSource = GetComponent<AudioSource>();
         getSEflag = false;
+        getSE = false;
     }
 
     void Update()
     {
-        Debug.Log(getSEflag);
         if (getSEflag == false)
         {  //falseの間操作可能
             if ((!Input.GetButton("A") && Input.GetAxis("Vertical") == -1) || (!Input.GetButton("A") && Input.GetAxis("Vertical2") == -1)) //下が押された場合
             {
                 if (getSE == false)
                 {
-                    audioSource.PlayOneShot(sound1);
+                    //audioSource.PlayOneShot(sound1);
                     getSE = true;
                 }
             }
@@ -35,7 +35,7 @@ public class Seselect : MonoBehaviour
             {
                 if (getSE == false)
                 {
-                    audioSource.PlayOneShot(sound1);
+                    //audioSource.PlayOneShot(sound1);
                     getSE = true;
                 }
             }
@@ -47,8 +47,8 @@ public class Seselect : MonoBehaviour
             {
                 if (getSE == false)
                 {
-                    audioSource.PlayOneShot(sound2);
-                    getSE = true;
+                    //audioSource.PlayOneShot(sound2);
+                    //getSE = true;
                     getSEflag = true;
                 }
             }
